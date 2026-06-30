@@ -1,0 +1,8 @@
+<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Play">
+<path id="Vector 15" d="M1.5 6V2.625C1.5 2.00368 2.00368 1.5 2.625 1.5H6" stroke="#252321" stroke-width="1.125" stroke-linecap="round"/>
+<path id="Vector 17" d="M1.5 18V21.375C1.5 21.9963 2.00368 22.5 2.625 22.5H6" stroke="#252321" stroke-width="1.125" stroke-linecap="round"/>
+<path id="Vector 16" d="M18 1.5L21.375 1.5C21.9963 1.5 22.5 2.00368 22.5 2.625L22.5 6" stroke="#252321" stroke-width="1.125" stroke-linecap="round"/>
+<path id="Vector 18" d="M18 22.5L21.375 22.5C21.9963 22.5 22.5 21.9963 22.5 21.375L22.5 18" stroke="#252321" stroke-width="1.125" stroke-linecap="round"/>
+</g>
+</svg>

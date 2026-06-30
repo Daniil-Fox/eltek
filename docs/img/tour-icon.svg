@@ -1,0 +1,9 @@
+<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Property 1=R">
+<path id="Vector 14" d="M16 8V15.6923M16 8L22.2655 11.718C22.7208 11.9882 23 12.4785 23 13.008V19.8462M16 8L9.73452 11.718C9.27916 11.9882 9 12.4785 9 13.008V19.8462M16 15.6923L9 19.8462M16 15.6923L23 19.8462M23 19.8462L16.7655 23.5458C16.2936 23.8258 15.7064 23.8258 15.2345 23.5458L9 19.8462" stroke="#FF965C" stroke-width="1.5"/>
+<path id="Vector 15" d="M2 8V3.5C2 2.67157 2.67157 2 3.5 2H8" stroke="#FF965C" stroke-width="1.5" stroke-linecap="round"/>
+<path id="Vector 17" d="M2 24V28.5C2 29.3284 2.67157 30 3.5 30H8" stroke="#FF965C" stroke-width="1.5" stroke-linecap="round"/>
+<path id="Vector 16" d="M24 2L28.5 2C29.3284 2 30 2.67157 30 3.5L30 8" stroke="#FF965C" stroke-width="1.5" stroke-linecap="round"/>
+<path id="Vector 18" d="M24 30L28.5 30C29.3284 30 30 29.3284 30 28.5L30 24" stroke="#FF965C" stroke-width="1.5" stroke-linecap="round"/>
+</g>
+</svg>

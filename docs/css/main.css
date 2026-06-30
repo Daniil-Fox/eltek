@@ -6362,7 +6362,7 @@ span.popular-card__figure {
   }
 }
 .form__privacy {
-  color: #79716C;
+  color: #79716c;
   text-align: center;
   /* text-3 */
   font-family: "PP Neue Montreal";
@@ -6410,7 +6410,7 @@ span.popular-card__figure {
 .cta__bg {
   position: absolute;
   inset: 0;
-  background: linear-gradient(115deg, rgba(27, 32, 36, 0.94) 0%, rgba(27, 32, 36, 0.82) 45%, rgba(27, 32, 36, 0.88) 100%), url("./../img/bg.png") center/cover no-repeat;
+  background: linear-gradient(115deg, rgba(27, 32, 36, 0.94) 0%, rgba(27, 32, 36, 0.82) 45%, rgba(27, 32, 36, 0.88) 100%), url("./../img/cta.png") center/cover no-repeat;
 }
 .cta__bg::after {
   content: "";
@@ -6763,7 +6763,7 @@ span.popular-card__figure {
   height: auto;
   padding-top: 14px;
   padding-bottom: 14px;
-  resize: vertical;
+  resize: none;
 }
 @media (min-width: 1440px) {
   .cta-form__textarea {

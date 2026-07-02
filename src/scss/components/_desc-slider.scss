@@ -1,0 +1,114 @@
+.desc-slider {
+  display: flex;
+  align-items: center;
+  min-width: 0;
+  gap: 30px;
+  @media (min-width: 1441px) {
+    gap: 3rem;
+  }
+  @include mobile {
+    flex-wrap: wrap;
+    gap: 64px;
+  }
+  &__left {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-width: 0;
+    @include mobile {
+      flex: unset;
+    }
+  }
+  &__right {
+    flex: 1;
+    width: 100%;
+    min-width: 0;
+    @include mobile {
+      flex: unset;
+      order: -1;
+    }
+  }
+  &__title {
+    margin: 0;
+    margin-bottom: 12px;
+    overflow: hidden;
+    color: var(--black-brand-color);
+    text-overflow: ellipsis;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 1.6px;
+
+    @media (min-width: 1441px) {
+      margin-bottom: 1.2rem;
+      font-size: 3.2rem;
+      letter-spacing: 0.16rem;
+    }
+    @include mobile {
+      font-size: 24px;
+      font-weight: 500;
+      letter-spacing: 0.48px;
+    }
+  }
+  &__control {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    margin-bottom: 30px;
+    @media (min-width: 1441px) {
+      gap: 1.6rem;
+      margin-bottom: 3rem;
+    }
+    @include mobile {
+      margin-bottom: 40px;
+    }
+  }
+  &__slider {
+    max-width: 100%;
+  }
+  &__pagination {
+    position: relative;
+    z-index: 5;
+    width: unset;
+    bottom: 0;
+    color: var(--focus-color);
+
+    text-overflow: ellipsis;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: 0.7px;
+    @media (min-width: 1441px) {
+      font-size: 1.4rem;
+      letter-spacing: 0.07rem;
+    }
+    span {
+      color: var(--black-brand-color);
+    }
+  }
+}
+
+.desc-slider-control__btn {
+  position: relative;
+  z-index: 3;
+  width: 86.5px;
+  height: 38px;
+  background-image: url("./../img/arrow-left.svg");
+  background-position: center, center;
+  background-size: 54.5px 6px;
+  background-repeat: no-repeat;
+  &--right {
+    transform: rotate(180deg);
+  }
+  @media (min-width: 1441px) {
+    width: 8.65rem;
+    height: 3.8rem;
+    background-size: 5.45rem 0.6rem;
+  }
+}

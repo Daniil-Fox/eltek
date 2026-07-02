@@ -1,0 +1,71 @@
+.contact-fab {
+  --contact-fab-size: 48px;
+  --contact-fab-gap: 8px;
+
+  position: fixed;
+  z-index: 20;
+  right: 30px;
+  bottom: 30px;
+
+  @media (min-width: 1441px) {
+    right: 3rem;
+    bottom: 3rem;
+    --contact-fab-size: 4.8rem;
+    --contact-fab-gap: 0.8rem;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: flex-end;
+    gap: var(--contact-fab-gap);
+    max-height: var(--contact-fab-size);
+    overflow: hidden;
+    transition: max-height 0.35s ease;
+  }
+
+  &:hover &__list,
+  &:focus-within &__list {
+    max-height: calc(
+      var(--contact-fab-size) * var(--contact-fab-count, 4) +
+        var(--contact-fab-gap) * (var(--contact-fab-count, 4) - 1)
+    );
+  }
+
+  &__item {
+    flex-shrink: 0;
+  }
+
+  &__btn {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: var(--contact-fab-size);
+    height: var(--contact-fab-size);
+    border-radius: 50%;
+    background: var(--white-color);
+    cursor: pointer;
+    transition:
+      transform 0.25s ease,
+      box-shadow 0.25s ease;
+
+    img {
+      width: 32px;
+      height: 32px;
+      transition: transform 0.3s ease;
+    }
+    @include hover {
+      img {
+        transform: scale(1.08);
+      }
+    }
+  }
+
+  &__btn:hover &__label,
+  &__btn:focus-visible &__label {
+    img {
+      transform: scale(1.1);
+    }
+  }
+}

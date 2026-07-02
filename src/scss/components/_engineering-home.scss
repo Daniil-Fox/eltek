@@ -1,0 +1,18 @@
+// .services-intro background is defined in _benefit.scss for the main page block
+
+.responsibility {
+  .res__author {
+    margin: 0 0 16px;
+    color: var(--focus-color);
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 1.4px;
+    text-transform: uppercase;
+
+    @media (min-width: 1440px) {
+      font-size: 1.4rem;
+      margin-bottom: 1.6rem;
+    }
+  }
+}
+

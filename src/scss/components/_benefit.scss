@@ -1,0 +1,230 @@
+.benefit {
+  position: relative;
+  overflow: hidden;
+  padding: 160px 0 180px;
+  background-color: var(--surface-light);
+  @include feather-top(#fff, transparent);
+  @include feather-bottom(#fff, transparent);
+
+  @include mobile {
+    padding: 80px 0;
+  }
+
+  @media (min-width: 1440px) {
+    padding-top: 16rem;
+    padding-bottom: 18rem;
+  }
+
+  &__container {
+    position: relative;
+    z-index: 2;
+    padding-left: 113px;
+    padding-right: 113px;
+    text-align: center;
+
+    @include mobile {
+      padding: 0 16px;
+    }
+  }
+
+  &__heading {
+    margin-bottom: 32px;
+
+    p {
+      margin: 0;
+      color: var(--black-brand-color);
+      font-size: 10px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+
+      span {
+        color: var(--focus-active-color);
+      }
+
+      @media (min-width: 1440px) {
+        font-size: 1rem;
+        letter-spacing: 0.3rem;
+      }
+
+      @include mobile {
+        font-size: 8px;
+        letter-spacing: 2.4px;
+      }
+    }
+  }
+
+  &__title-logo {
+    margin: 0 0 8px;
+    color: var(--focus-active-color);
+    font-size: 40px;
+
+    @media (min-width: 1440px) {
+      font-size: 4rem;
+    }
+
+    @include mobile {
+      font-size: 32px;
+    }
+  }
+
+  &__title {
+    margin-bottom: 48px;
+
+    @media (min-width: 1440px) {
+      margin-bottom: 4.8rem;
+    }
+  }
+
+  &__buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 16px;
+    margin-bottom: 64px;
+
+    @include mobile {
+      flex-direction: column;
+      align-items: stretch;
+      margin-bottom: 32px;
+      padding: 0 5%;
+    }
+  }
+
+  &__btn {
+    &:not(:last-child) {
+      @include mobile {
+        margin-bottom: 16px;
+      }
+    }
+  }
+
+  &__list {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 16px;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 40px;
+
+    @media (min-width: 1440px) {
+      gap: 1.6rem;
+      padding: 0 4rem;
+      max-width: 128rem;
+    }
+
+    @include mobile {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      padding: 0 16px;
+    }
+  }
+
+  &__item {
+    padding: 0;
+    height: 100%;
+    display: block;
+  }
+
+  &__card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    padding: 28px 20px 32px;
+    border: 1px solid rgba(27, 32, 38, 0.07);
+    border-radius: 12px;
+    background-color: var(--surface-soft);
+    transition:
+      border-color 0.3s ease,
+      box-shadow 0.3s ease,
+      transform 0.3s ease,
+      background-color 0.3s ease;
+
+    @media (min-width: 1440px) {
+      padding: 2.8rem 2rem 3.2rem;
+      border-radius: 1.2rem;
+    }
+
+    @include hover {
+      border-color: rgba(229, 57, 53, 0.22);
+      background-color: var(--white-color);
+      box-shadow: 0 14px 36px rgba(27, 32, 38, 0.08);
+      transform: translateY(-3px);
+    }
+
+    @include mobile {
+      padding: 20px 14px 24px;
+    }
+  }
+
+  &__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 56px;
+    height: 56px;
+    margin-bottom: 20px;
+    color: var(--focus-color);
+    border: 1px solid rgba(27, 32, 38, 0.08);
+    border-radius: 12px;
+    background:
+      radial-gradient(
+        circle at 30% 20%,
+        rgba(229, 57, 53, 0.08) 0%,
+        transparent 55%
+      ),
+      var(--white-color);
+    box-shadow: 0 6px 18px rgba(27, 32, 38, 0.06);
+
+    svg {
+      display: block;
+      width: 28px;
+      height: 28px;
+    }
+
+    @media (min-width: 1440px) {
+      width: 5.6rem;
+      height: 5.6rem;
+      margin-bottom: 2rem;
+      border-radius: 1.2rem;
+
+      svg {
+        width: 2.8rem;
+        height: 2.8rem;
+      }
+    }
+
+    @include mobile {
+      width: 48px;
+      height: 48px;
+      margin-bottom: 14px;
+
+      svg {
+        width: 24px;
+        height: 24px;
+      }
+    }
+  }
+
+  &__text {
+    margin: 0;
+    color: var(--black-brand-color);
+    text-align: center;
+
+    font-size: 15px;
+    line-height: 160%;
+    letter-spacing: 0.01em;
+
+    @media (min-width: 1440px) {
+      font-size: 1.5rem;
+    }
+
+    @include mobile {
+      font-size: 13px;
+      line-height: 150%;
+    }
+  }
+}

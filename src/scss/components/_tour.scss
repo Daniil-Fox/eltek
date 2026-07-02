@@ -1,0 +1,19 @@
+.tour {
+  position: relative;
+  background-color: #ccc;
+  cursor: none;
+  overflow: hidden;
+
+  iframe {
+    height: 64rem;
+
+    @include mobile {
+      height: 320px;
+    }
+
+  }
+}
+
+.sphere .grab {
+  cursor: pointer !important;
+}

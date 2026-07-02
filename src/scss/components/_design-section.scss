@@ -1,0 +1,294 @@
+.design-section {
+  padding-bottom: 120px;
+
+  h1 {
+    margin: 0;
+    padding: 30px;
+    max-width: 1000px;
+    color: var(--black-brand-color);
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+
+    @media (min-width: 1441px) {
+      padding: 3rem;
+      max-width: 100rem;
+      font-size: 4rem;
+    }
+
+    @include mobile {
+      font-size: 24px;
+      font-weight: 500;
+      letter-spacing: 0.48px;
+      padding: 16px;
+      padding-bottom: 32px;
+    }
+  }
+
+  &__background {
+    position: relative;
+    height: 100%;
+    height: 530px;
+
+    img {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+
+      @include mobile {
+        position: static;
+        height: auto;
+      }
+    }
+
+    @media (min-width: 1441px) {
+      height: 53rem;
+    }
+
+    @include mobile {
+      position: static;
+      height: unset;
+    }
+  }
+
+  &__container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    @include mobile {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__left {
+
+    grid-column: 1 span;
+    padding: 120px 30px;
+
+    @media (min-width: 1441px) {
+      padding: 12rem 3rem;
+    }
+
+    @include mobile {
+      padding: 64px 16px;
+    }
+
+    div {
+      position: sticky;
+      top: 100px;
+
+      @media (min-width: 1441px) {
+        top: 10rem;
+      }
+
+      @include mobile {
+        position: static;
+        top: unset;
+      }
+    }
+
+    h2 {
+      margin: 0;
+      margin-bottom: 24px;
+      color: var(--black-brand-color);
+      font-size: 48px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: normal;
+      letter-spacing: 2.4px;
+      text-transform: uppercase;
+
+      @media (min-width: 1441px) {
+        margin-bottom: 2.4rem;
+        font-size: 4.8rem;
+        letter-spacing: 0.24rem;
+      }
+
+      @include mobile {
+        font-size: 24px;
+        letter-spacing: 0.48px;
+
+      }
+    }
+
+    p {
+      margin: 0;
+      max-width: 570px;
+      color: var(--black-brand-color);
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 140%;
+      letter-spacing: 0.2px;
+
+      @media (min-width: 1441px) {
+        max-width: 57rem;
+        font-size: 2rem;
+        letter-spacing: 0.02rem;
+      }
+    }
+  }
+
+  &__right {
+    grid-column: 1 span;
+    padding: 120px 0;
+    overflow: hidden;
+
+    @media (min-width: 1441px) {
+      padding: 12rem 0;
+    }
+
+    @media (min-width: 2560px) {
+      overflow: unset;
+    }
+
+    @include mobile {
+      padding: 32px 16px;
+      overflow: hidden;
+    }
+
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 30px;
+      border-left: 1px solid var(--focus-color);
+
+      @media (min-width: 1441px) {
+        padding: 3rem;
+      }
+
+      @include mobile {
+        border-left: unset;
+      }
+
+      li {
+        &:not(:last-child) {
+          margin-bottom: 60px;
+
+          @media (min-width: 1441px) {
+            margin-bottom: 6rem;
+          }
+        }
+
+        h4 {
+          margin: 0;
+          color: var(--black-color);
+          font-size: 28px;
+          font-style: normal;
+          font-weight: 500;
+          line-height: normal;
+          letter-spacing: 1.4px;
+          text-transform: uppercase;
+
+          @media (min-width: 1441px) {
+            font-size: 2.8rem;
+            letter-spacing: 0.14rem;
+          }
+
+          @include mobile {
+            font-size: 18px;
+            letter-spacing: 0.9px;
+          }
+        }
+      }
+    }
+  }
+
+  &__articles {
+    article {
+      width: 100%;
+
+      a {
+        display: block;
+        padding: 0 30px;
+
+        @include hover {
+          h5 {
+            color: var(--focus-color);
+          }
+
+          .design-section__image {
+            img {
+              transform: scale(1.05);
+            }
+          }
+        }
+
+        @media (min-width: 1441px) {
+          padding: 0 3rem;
+        }
+
+        @include mobile {
+          padding: 32px 16px;
+        }
+      }
+    }
+
+    h5 {
+      margin: 0;
+      margin-bottom: 12px;
+      color: var(--black-brand-color);
+      font-size: 24px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: normal;
+      letter-spacing: 0.24px;
+      text-transform: uppercase;
+
+      transition: color .3s ease-in;
+
+
+      @media (min-width: 1441px) {
+        margin-bottom: 1.2rem;
+        font-size: 2.4rem;
+        letter-spacing: 0.024rem;
+      }
+    }
+
+    p {
+      margin: 0;
+      color: var(--black-brand-color);
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 160%;
+      letter-spacing: 0.32px;
+
+      @media (min-width: 1441px) {
+        font-size: 1.6rem;
+        letter-spacing: 0.032rem;
+      }
+    }
+  }
+
+  &__image {
+    height: 245px;
+    margin-bottom: 32px;
+    position: relative;
+    overflow: hidden;
+
+    img {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      transition: transform .3s ease-in;
+
+      @include mobile {
+        position: static;
+        height: unset;
+      }
+    }
+
+    @media (min-width: 1441px) {
+      height: 24.5rem;
+      margin-bottom: 3.2rem;
+    }
+
+    @include mobile {
+      position: static;
+      height: unset;
+    }
+  }
+}

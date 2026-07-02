@@ -1,0 +1,85 @@
+.tech-gen {
+  padding-bottom: 64px;
+
+  @media (min-width: 1441px) {
+    padding-bottom: 6.4rem;
+  }
+
+  @include mobile {
+    padding-bottom: 0;
+  }
+
+  &__row {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    width: 100%;
+    padding: 80px 64px;
+    border-bottom: 1px solid var(--gray-lite-color);
+
+    @media (min-width: 1441px) {
+      padding: 8rem 6.4rem;
+    }
+
+    @include mobile {
+      grid-template-columns: 1fr;
+      padding: 80px 32px;
+    }
+
+    &>h2 {
+      color: var(--black-brand-color);
+      font-size: 48px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: normal;
+      letter-spacing: 2.4px;
+
+      flex: 1;
+
+      @media (min-width: 1441px) {
+        font-size: 4.8rem;
+        letter-spacing: 0.24rem;
+      }
+
+      @include mobile {
+        font-size: 24px;
+        letter-spacing: 0.48px;
+      }
+    }
+
+    &>p {
+      position: relative;
+      color: var(--gray-middle-color);
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 160%;
+      letter-spacing: 0.32px;
+      padding-right: 90px;
+      flex: 1;
+
+      @media (min-width: 1441px) {
+        font-size: 1.6rem;
+        padding-right: 9rem;
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 24px;
+        height: 24px;
+        transform: rotate(90deg);
+        background-image: url('./../img/accordion-icon.svg');
+        background-position: center center;
+        background-size: cover;
+        background-repeat: no-repeat;
+
+        @media (min-width: 1441px) {
+          width: 2.4rem;
+          height: 2.4rem;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,165 @@
+.implemPhoto-section {
+  .product__image {
+    @include hover {
+      .implemPhoto-section__btn {
+        opacity: 1;
+      }
+
+    }
+  }
+
+  h1 {
+    margin: 0;
+    margin-bottom: 16px;
+    color: var(--black-brand-color);
+    text-align: center;
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 0.28px;
+
+    @media (min-width: 1441px) {
+      margin-bottom: 1.6rem;
+      font-size: 2.8rem;
+      letter-spacing: 0.028rem;
+    }
+
+    @include mobile {
+      font-size: 20px;
+      letter-spacing: 0.2px;
+      padding: 16px;
+      padding-top: 0;
+    }
+  }
+
+  .filters {
+    ul {
+      margin-bottom: 20px;
+
+      @media (min-width: 1441px) {
+        margin-bottom: 2rem;
+      }
+    }
+  }
+
+  &__btn {
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    z-index: 9;
+    opacity: 0;
+    transition: opacity .3s ease-in;
+
+    @media (min-width: 1441px) {
+      right: 2rem;
+      bottom: 2rem;
+    }
+
+    &--fullscreen {
+      a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        border: none;
+        width: 40px;
+        height: 40px;
+        padding: 0px;
+        flex-shrink: 0;
+        background-color: var(--focus-color);
+        transition: background-color .3s ease-in;
+
+        @media (min-width: 1440px) {
+          width: 4rem;
+          height: 4rem;
+        }
+
+        svg {
+          width: 24px;
+          height: 24px;
+          stroke-width: 2px;
+          fill: none;
+          fill: var(--black-brand-color);
+          transition: stroke 0.3s ease-in;
+          pointer-events: none;
+          fill: none;
+          stroke: var(--black-brand-color);
+          stroke-width: 1.125px;
+
+          @media (min-width: 1440px) {
+            width: 2.4rem;
+            height: 2.4rem;
+          }
+        }
+
+        &:focus {
+          background-color: unset;
+          outline: 1px solid var(--focus-color);
+
+          svg {
+            stroke: var(--focus-color);
+          }
+        }
+
+        @include hover {
+          background-color: var(--focus-active-color);
+          outline: 1px solid var(--focus-color);
+        }
+
+        &:active {
+          background-color: unset;
+
+          svg {
+            stroke: var(--focus-active-color);
+          }
+        }
+
+        &-dark {
+          svg {
+            stroke: var(--black-brand-color);
+          }
+        }
+      }
+
+    }
+  }
+
+
+
+  &__filters {
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    padding: 10px 30px;
+    margin-bottom: 20px;
+
+    @media (min-width: 1441px) {
+      padding: 1rem 3rem;
+      margin-bottom: 2rem;
+    }
+
+    @include mobile {
+      display: none;
+    }
+  }
+
+  &__list {
+    padding-top: 30px;
+    padding-bottom: 60px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px 5px;
+
+    @media (min-width: 1441px) {
+      padding-top: 3rem;
+      padding-bottom: 6rem;
+      gap: 4rem 0.5rem;
+    }
+
+    @include mobile {
+      grid-template-columns: 1fr;
+      gap: 30px;
+    }
+  }
+}

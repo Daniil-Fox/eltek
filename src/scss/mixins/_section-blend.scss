@@ -1,0 +1,27 @@
+@mixin feather-top($inner, $outer: transparent) {
+  &::before {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: -10%;
+    width: 120%;
+    height: clamp(96px, 14vw, 220px);
+    pointer-events: none;
+    background: linear-gradient(to bottom, $inner, $outer);
+  }
+}
+
+@mixin feather-bottom($inner, $outer: transparent) {
+  &::after {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    bottom: 0;
+    left: -10%;
+    width: 120%;
+    height: clamp(96px, 14vw, 220px);
+    pointer-events: none;
+    background: linear-gradient(to top, $inner, $outer);
+  }
+}

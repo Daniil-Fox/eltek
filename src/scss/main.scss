@@ -1,0 +1,78 @@
+// базовые подключения
+@import "vars";
+@import "mixins";
+@import "fonts";
+@import "settings";
+
+@import "./components/header";
+@import "./components/slider-control";
+@import "./components/address";
+@import "./components/nav";
+@import "./components/dropdown";
+@import "./components/hero";
+@import "./components/modal-video";
+@import "./components/modal-form";
+@import "./components/modal-gallery";
+@import "./components/menu";
+@import "./components/favorites";
+@import "./components/benefit";
+@import "./components/tour";
+@import "./components/popular";
+@import "./components/services-section";
+@import "./components/video";
+@import "./components/projects-section";
+@import "./components/benefits-house";
+@import "./components/house-content";
+@import "./components/eco-house";
+@import "./components/tech";
+@import "./components/add";
+@import "./components/responsibility";
+@import "./components/office";
+@import "./components/form";
+@import "./components/cta";
+@import "./components/engineering-home";
+
+@import "./components/breadcrumbs";
+@import "./components/catalogue-section";
+@import "./components/product";
+@import "./components/filters";
+@import "./components/pagination";
+@import "./components/built-houses";
+
+@import "./components/mobile-menu";
+
+@import "./components/footer";
+@import "./components/chars";
+@import "./components/item-hero";
+@import "./components/item-plan";
+@import "./components/desc-slider";
+@import "./components/desc-info";
+@import "./components/item-desc";
+@import "./components/similar";
+@import "./components/others";
+@import "./components/accordion";
+@import "./components/faq";
+
+@import "./components/design-section";
+@import "./components/implemPhoto-section";
+@import "./components/implemTours-section";
+@import "./components/implemVideo-section";
+@import "./components/implemObjects-section";
+@import "./components/implemReady-section";
+@import "./components/contacts";
+@import "./components/contact-fab";
+
+@import "./components/about-hero";
+@import "./components/about-buttons";
+@import "./components/about-video";
+@import "./components/partners-marquee";
+@import "./components/about-harmony";
+@import "./components/about-gift";
+@import "./components/about-prod";
+@import "./components/about-mon";
+@import "./components/about-desc";
+@import "./components/about-portfolio";
+@import "./components/tech-gen";
+@import "./components/timber-main";
+
+@import "./components/not-found404";

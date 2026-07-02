@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ru" class="page">
+@include('partials/head.html')
+
+<body class="page__body">
+  <div class="site-container">
+    @include('partials/header.html')
+    <main class="main smooth-scroll">
+      @include('partials/menu.html')
+      <!-- @include('partials/favorites.html') -->
+      @include('partials/modal-form.html')
+      <section class="tech-gen">
+        <div class="breadcrumbs design-section__breadcrumbs">
+          <ul>
+            <li>
+              <a href="./index.html">Главная</a>
+            </li>
+            <li>
+              <a>Услуги</a>
+            </li>
+          </ul>
+        </div>
+        <div class="tech-gen__container main-container">
+          <a href="./designStep.html" class="tech-gen__row">
+            <h2>Выбор учаcтка</h2>
+            <p>Если вы&nbsp;ещё не&nbsp;определились с&nbsp;будущей локацией загородного дома и&nbsp;находитесь
+              в&nbsp;стадии покупки, мы&nbsp;можем
+              уже на&nbsp;этой стадии грамотно оценить и&nbsp;выбрать участок, чтобы избежать в&nbsp;дальнейшем любых
+              стеснений
+              и&nbsp;ограничений. Лес, берег водоёма и&nbsp;коттеджная застройка
+            </p>
+          </a>
+          <a href="./designStep-second.html" class="tech-gen__row">
+            <h2>Проектирование</h2>
+            <p>Если вы&nbsp;ещё не&nbsp;определились с&nbsp;будущей локацией загородного дома и&nbsp;находитесь
+              в&nbsp;стадии покупки, мы&nbsp;можем уже на&nbsp;этой стадии грамотно оценить и&nbsp;выбрать участок,
+              чтобы избежать в&nbsp;дальнейшем любых стеснений и&nbsp;ограничений. Лес, берег водоёма и&nbsp;коттеджная
+              застройка
+            </p>
+          </a>
+        </div>
+      </section>
+      <section class="cta" data-src-bg="./img/cta-bg.webp">
+        <div class="main-container cta__container">
+          <div class="cta__left">
+            <h2 class="title cta__title title--white" data-aos="custom-custom-fade-up" data-aos-offset="20">
+              Заказать индивидуальный расчет
+            </h2>
+          </div>
+          <form class="cta__form form cta__form--catalogue">
+            <h4 class="form__title desc-dis">Свяжитесь с нами</h4>
+            <address class="cta__address address desc-dis">
+              <a class="address__tel" href="tel:+78006007008" data-aos="custom-fade-up" data-aos-delay="300">+7 800 600
+                7008</a>
+              <a class="address__whatsapp" href="https://api.whatsapp.com/send?phone=78006007008" target="_blank"
+                data-aos="custom-fade-up" data-aos-delay="300">Написать в WhatsApp</a>
+              <a class="address__telega" href="tg://resolve?domain=username" target="_blank" data-aos="custom-fade-up"
+                data-aos-delay="300">Написать в Telegram</a>
+            </address>
+            <h4 class="form__title">Написать нам</h4>
+            <label class="form__label">
+              <span>Имя</span>
+              <input type="text" class="form__input" name="name" />
+            </label>
+            <label class="form__label">
+              <span>Телефон</span>
+              <input type="tel" class="form__input" name="phone" />
+            </label>
+            <label class="form__label">
+              <span>Комментарий</span>
+              <input type="text" class="form__input" name="comment" />
+            </label>
+            <button class="btn btn--fill form__btn btn-reset" type="submit">
+              Отправить
+            </button>
+            <p class="form__privacy">
+              Нажимая кнопку “Отправить”, вы принимаете условия
+              <a href="#" target="_blank">Политики конфиденциальности</a>
+            </p>
+          </form>
+        </div>
+      </section>
+      @include('partials/mobile-menu.html')
+      <button class="up-page-btn btn-reset"></button>
+    </main>
+    @include('partials/footer.html')
+    <div class="plug"></div>
+  </div>
+  @include('partials/favScript.html')
+</body>
+
+</html>

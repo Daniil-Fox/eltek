@@ -1,0 +1,19 @@
+:root {
+  --font-family: "Exo2";
+  --content-width: 1170px;
+  --container-offset: 15px;
+  --container-width: calc(var(--content-width) + (var(--container-offset) * 2));
+
+  /* engineering brand palette */
+  --white-color: #ffffff;
+  --dark-bg-color: #1b2026;
+  --black-brand-color: #1b2026;
+  --gray-lite-color: #8a9199;
+  --gray-middle-color: #6b7280;
+  --focus-color: #e53935;
+  --focus-active-color: #c62828;
+  --text-on-dark: #ffffff;
+  --surface-light: #dfe3e8;
+  --surface-soft: #ebeef2;
+  --surface-muted: #d4d9df;
+}

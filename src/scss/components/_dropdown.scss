@@ -1,0 +1,61 @@
+.dropdown {
+  display: inline-block;
+  position: relative;
+  @include hover {
+    .dropdown__btn {
+      color: var(--focus-color);
+    }
+  }
+  &__list {
+    position: absolute;
+    padding-top: 10%;
+    top: 100%;
+    left: 0;
+    display: none;
+    z-index: 20;
+  }
+  &__item {
+    padding: 12px 0;
+    position: relative;
+    @media (min-width: 1440px) {
+      padding: 1.2rem 0;
+    }
+    @include hover {
+      .nav__link {
+        color: var(--focus-color);
+      }
+    }
+  }
+  &__btn {
+    position: relative;
+    color: var(--white-color);
+    display: flex;
+    svg {
+      display: inline-block;
+      margin-left: 4px;
+      height: 12px;
+      width: 12px;
+      fill: none;
+      stroke: currentColor;
+      transition: transform linear;
+
+      @media (min-width: 1440px){
+        margin-left: 0.4rem;
+        height: 1.2rem;
+        width: 1.2rem;
+        stroke-width: 0.1rem;
+      }
+    }
+    @include hover {
+      .dropdown__list {
+        display: block;
+      }
+      svg {
+        transform: rotateX(180deg);
+      }
+    }
+  }
+}
+.dropdown:hover .dropdown__list {
+  display: block;
+}

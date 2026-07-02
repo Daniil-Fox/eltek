@@ -1,0 +1,456 @@
+<section class="catalogue-section">
+  <div class="main-container">
+    <div class="breadcrumbs catalogue-section__breadcrumbs">
+      <ul>
+        <li>
+          <a href="./index.html">Главная</a>
+        </li>
+        <li>
+          <a>Проекты домов</a>
+        </li>
+      </ul>
+    </div>
+    <h1 class="catalogue-section__title container">Проекты домов из клееного бруса</h1>
+    <div class="catalogue-section__items">
+      <div class="catalogue-section__filters filters">
+        <ul>
+          <li>
+            <button data-filter="all">
+              Все
+            </button>
+          </li>
+          <li>
+            <button data-filter="finnish">
+              финская классика
+            </button>
+          </li>
+          <li>
+            <button data-filter="modern">
+              современные дома
+            </button>
+          </li>
+          <li>
+            <button data-filter="interior">
+              мансарда
+            </button>
+          </li>
+          <li>
+            <button data-filter="1-floor">
+              1 этаж
+            </button>
+          </li>
+          <li>
+            <button data-filter="2-floors">
+              2 этажа
+            </button>
+          </li>
+          <li>
+            <button data-filter="3-floors">
+              3 этажа
+            </button>
+          </li>
+          <li>
+            <button data-filter="up-200-sq">
+              до 200 м<sup>2</sup>
+            </button>
+          </li>
+          <li>
+            <button data-filter="from-200-sq">
+              от 200 м<sup>2</sup>
+            </button>
+          </li>
+        </ul>
+      </div>
+      <ul class="catalogue-section__catalogue catalogue list-reset">
+        <li class="catalogue__item">
+          <article class="catalogue__product product" data-id="${id}">
+            <button class="product__btn btn btn--like btn--stroke btn-reset">
+              <svg>
+                <use xlink:href="img/sprite.svg#like-icon"></use>
+              </svg>
+            </button>
+            <a href="#" class="product__link">
+              <div class="product__image">
+                <div class="product__switch image-switch">
+                  <div class="image-switch__item">
+                    <div class="image-switch__img">
+                      <picture>
+                        <source srcset="./img/catalogue/01-1-2x.webp" type="image/webp" media="(min-width: 1440px)" />
+                        <source srcset="./img/catalogue/01-1.webp" type="image/webp" />
+                        <img src="./img/catalogue/01-1.jpg" srcset="./img/catalogue/01-1-2x.jpg 2x" alt="Product 1" />
+                      </picture>
+                    </div>
+                  </div>
+                  <div class="image-switch__item">
+                    <div class="image-switch__img">
+                      <picture>
+                        <source srcset="./img/catalogue/01-2-2x.webp" type="image/webp" media="(min-width: 1440px)" />
+                        <source srcset="./img/catalogue/01-2.webp" type="image/webp" />
+                        <img src="./img/catalogue/01-2.webp" srcset="./img/catalogue/01-2-2x.webp" alt="Product 1" />
+                      </picture>
+                    </div>
+                  </div>
+                  <div class="image-switch__item">
+                    <div class="image-switch__img">
+                      <picture>
+                        <source srcset="./img/catalogue/02-1-2x.webp" type="image/webp" media="(min-width: 1440px)" />
+                        <source srcset="./img/catalogue/02-1.webp" type="image/webp" />
+                        <img src="./img/catalogue/02-1.jpg" srcset="./img/catalogue/02-1-2x.jpg 2x" alt="Product 1" />
+                      </picture>
+                    </div>
+                  </div>
+                </div>
+                <div class="product__slider swiper">
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                      <picture>
+                        <source srcset="./img/catalogue/01-1-2x.webp" type="image/webp" media="(min-width: 1440px)" />
+                        <source srcset="./img/catalogue/01-1.webp" type="image/webp" />
+                        <img src="./img/catalogue/01-1.jpg" srcset="./img/catalogue/01-1-2x.jpg 2x" alt="Product 1" />
+                      </picture>
+                    </div>
+                    <div class="swiper-slide">
+                      <picture>
+                        <source srcset="./img/catalogue/01-2-2x.webp" type="image/webp" media="(min-width: 1440px)" />
+                        <source srcset="./img/catalogue/01-2.webp" type="image/webp" />
+                        <img src="./img/catalogue/01-2.webp" srcset="./img/catalogue/01-2-2x.webp" alt="Product 1" />
+                      </picture>
+                    </div>
+                    <div class="swiper-slide">
+                      <picture>
+                        <source srcset="./img/catalogue/02-1-2x.webp" type="image/webp" media="(min-width: 1440px)" />
+                        <source srcset="./img/catalogue/02-1.webp" type="image/webp" />
+                        <img src="./img/catalogue/02-1.jpg" srcset="./img/catalogue/02-1-2x.jpg 2x" alt="Product 1" />
+                      </picture>
+                    </div>
+                  </div>
+                  <div class="swiper-pagination product-slider__pagination"></div>
+                </div>
+                <ul class="pruoduct__image-pagination image-pagination list-reset"></ul>
+              </div>
+              <div class="product__info product-info">
+                <div class="product-info__left">
+                  <h3>Vaskela</h3>
+                  <span>от 12000 <svg class="">
+                      <use xlink:href="img/sprite.svg#rub"></use>
+                    </svg></span>
+                </div>
+                <ul>
+                  <li class="product-info__item product-info__item--sq" data-sq="200">
+                    <div class="product-info__figure">
+                      200 <span>м<sup>2</sup></span>
+                    </div>
+                  </li>
+                  <li data-fl="2">
+                    <div class="product-info__figure">2 <span>этажей</span></div>
+                  </li>
+                  <li data-bed="5">
+                    <div class="product-info__figure">5 <span>спален</span></div>
+                  </li>
+                  <li data-bath="2">
+                    <div class="product-info__figure">2 <span>ванны</span></div>
+                  </li>
+
+                </ul>
+              </div>
+            </a>
+          </article>
+        </li>
+        <li class="catalogue__item">
+          <article class="catalogue__product product" data-id="${id}">
+            <button class="product__btn btn btn--like btn--stroke btn-reset">
+              <svg>
+                <use xlink:href="img/sprite.svg#like-icon"></use>
+              </svg>
+            </button>
+            <a href="#" class="product__link">
+              <div class="product__image">
+                <div class="product__switch image-switch">
+                  <div class="image-switch__item">
+                    <div class="image-switch__img">
+                      <picture>
+                        <source srcset="./img/catalogue/01-1-2x.webp" type="image/webp" media="(min-width: 1440px)" />
+                        <source srcset="./img/catalogue/01-1.webp" type="image/webp" />
+                        <img src="./img/catalogue/01-1.jpg" srcset="./img/catalogue/01-1-2x.jpg 2x" alt="Product 1" />
+                      </picture>
+                    </div>
+                  </div>
+                  <div class="image-switch__item">
+                    <div class="image-switch__img">
+                      <picture>
+                        <source srcset="./img/catalogue/01-2-2x.webp" type="image/webp" media="(min-width: 1440px)" />
+                        <source srcset="./img/catalogue/01-2.webp" type="image/webp" />
+                        <img src="./img/catalogue/01-2.webp" srcset="./img/catalogue/01-2-2x.webp" alt="Product 1" />
+                      </picture>
+                    </div>
+                  </div>
+                  <div class="image-switch__item">
+                    <div class="image-switch__img">
+                      <picture>
+                        <source srcset="./img/catalogue/02-1-2x.webp" type="image/webp" media="(min-width: 1440px)" />
+                        <source srcset="./img/catalogue/02-1.webp" type="image/webp" />
+                        <img src="./img/catalogue/02-1.jpg" srcset="./img/catalogue/02-1-2x.jpg 2x" alt="Product 1" />
+                      </picture>
+                    </div>
+                  </div>
+                </div>
+                <div class="product__slider swiper">
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                      <picture>
+                        <source srcset="./img/catalogue/01-1-2x.webp" type="image/webp" media="(min-width: 1440px)" />
+                        <source srcset="./img/catalogue/01-1.webp" type="image/webp" />
+                        <img src="./img/catalogue/01-1.jpg" srcset="./img/catalogue/01-1-2x.jpg 2x" alt="Product 1" />
+                      </picture>
+                    </div>
+                    <div class="swiper-slide">
+                      <picture>
+                        <source srcset="./img/catalogue/01-2-2x.webp" type="image/webp" media="(min-width: 1440px)" />
+                        <source srcset="./img/catalogue/01-2.webp" type="image/webp" />
+                        <img src="./img/catalogue/01-2.webp" srcset="./img/catalogue/01-2-2x.webp" alt="Product 1" />
+                      </picture>
+                    </div>
+                    <div class="swiper-slide">
+                      <picture>
+                        <source srcset="./img/catalogue/02-1-2x.webp" type="image/webp" media="(min-width: 1440px)" />
+                        <source srcset="./img/catalogue/02-1.webp" type="image/webp" />
+                        <img src="./img/catalogue/02-1.jpg" srcset="./img/catalogue/02-1-2x.jpg 2x" alt="Product 1" />
+                      </picture>
+                    </div>
+                  </div>
+                  <div class="swiper-pagination product-slider__pagination"></div>
+                </div>
+                <ul class="pruoduct__image-pagination image-pagination list-reset"></ul>
+              </div>
+              <div class="product__info product-info">
+                <div class="product-info__left">
+                  <h3>Vaskela</h3>
+                  <span>от 12000 <svg class="">
+                      <use xlink:href="img/sprite.svg#rub"></use>
+                    </svg></span>
+                </div>
+                <ul>
+                  <li class="product-info__item product-info__item--sq" data-sq="200">
+                    <div class="product-info__figure">
+                      200 <span>м<sup>2</sup></span>
+                    </div>
+                  </li>
+                  <li data-fl="2">
+                    <div class="product-info__figure">2 <span>этажей</span></div>
+                  </li>
+                  <li data-bed="5">
+                    <div class="product-info__figure">5 <span>спален</span></div>
+                  </li>
+                  <li data-bath="2">
+                    <div class="product-info__figure">2 <span>ванны</span></div>
+                  </li>
+
+                </ul>
+              </div>
+            </a>
+          </article>
+        </li>
+        <li class="catalogue__item">
+          <article class="catalogue__product product" data-id="${id}">
+            <button class="product__btn btn btn--like btn--stroke btn-reset">
+              <svg>
+                <use xlink:href="img/sprite.svg#like-icon"></use>
+              </svg>
+            </button>
+            <a href="#" class="product__link">
+              <div class="product__image">
+                <div class="product__switch image-switch">
+                  <div class="image-switch__item">
+                    <div class="image-switch__img">
+                      <picture>
+                        <source srcset="./img/catalogue/01-1-2x.webp" type="image/webp" media="(min-width: 1440px)" />
+                        <source srcset="./img/catalogue/01-1.webp" type="image/webp" />
+                        <img src="./img/catalogue/01-1.jpg" srcset="./img/catalogue/01-1-2x.jpg 2x" alt="Product 1" />
+                      </picture>
+                    </div>
+                  </div>
+                  <div class="image-switch__item">
+                    <div class="image-switch__img">
+                      <picture>
+                        <source srcset="./img/catalogue/01-2-2x.webp" type="image/webp" media="(min-width: 1440px)" />
+                        <source srcset="./img/catalogue/01-2.webp" type="image/webp" />
+                        <img src="./img/catalogue/01-2.webp" srcset="./img/catalogue/01-2-2x.webp" alt="Product 1" />
+                      </picture>
+                    </div>
+                  </div>
+                  <div class="image-switch__item">
+                    <div class="image-switch__img">
+                      <picture>
+                        <source srcset="./img/catalogue/02-1-2x.webp" type="image/webp" media="(min-width: 1440px)" />
+                        <source srcset="./img/catalogue/02-1.webp" type="image/webp" />
+                        <img src="./img/catalogue/02-1.jpg" srcset="./img/catalogue/02-1-2x.jpg 2x" alt="Product 1" />
+                      </picture>
+                    </div>
+                  </div>
+                </div>
+                <div class="product__slider swiper">
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                      <picture>
+                        <source srcset="./img/catalogue/01-1-2x.webp" type="image/webp" media="(min-width: 1440px)" />
+                        <source srcset="./img/catalogue/01-1.webp" type="image/webp" />
+                        <img src="./img/catalogue/01-1.jpg" srcset="./img/catalogue/01-1-2x.jpg 2x" alt="Product 1" />
+                      </picture>
+                    </div>
+                    <div class="swiper-slide">
+                      <picture>
+                        <source srcset="./img/catalogue/01-2-2x.webp" type="image/webp" media="(min-width: 1440px)" />
+                        <source srcset="./img/catalogue/01-2.webp" type="image/webp" />
+                        <img src="./img/catalogue/01-2.webp" srcset="./img/catalogue/01-2-2x.webp" alt="Product 1" />
+                      </picture>
+                    </div>
+                    <div class="swiper-slide">
+                      <picture>
+                        <source srcset="./img/catalogue/02-1-2x.webp" type="image/webp" media="(min-width: 1440px)" />
+                        <source srcset="./img/catalogue/02-1.webp" type="image/webp" />
+                        <img src="./img/catalogue/02-1.jpg" srcset="./img/catalogue/02-1-2x.jpg 2x" alt="Product 1" />
+                      </picture>
+                    </div>
+                  </div>
+                  <div class="swiper-pagination product-slider__pagination"></div>
+                </div>
+                <ul class="pruoduct__image-pagination image-pagination list-reset"></ul>
+              </div>
+              <div class="product__info product-info">
+                <div class="product-info__left">
+                  <h3>Vaskela</h3>
+                  <span>от 12000 <svg class="">
+                      <use xlink:href="img/sprite.svg#rub"></use>
+                    </svg></span>
+                </div>
+                <ul>
+                  <li class="product-info__item product-info__item--sq" data-sq="200">
+                    <div class="product-info__figure">
+                      200 <span>м<sup>2</sup></span>
+                    </div>
+                  </li>
+                  <li data-fl="2">
+                    <div class="product-info__figure">2 <span>этажей</span></div>
+                  </li>
+                  <li data-bed="5">
+                    <div class="product-info__figure">5 <span>спален</span></div>
+                  </li>
+                  <li data-bath="2">
+                    <div class="product-info__figure">2 <span>ванны</span></div>
+                  </li>
+
+                </ul>
+              </div>
+            </a>
+          </article>
+        </li>
+        <li class="catalogue__item">
+          <article class="catalogue__product product" data-id="${id}">
+            <button class="product__btn btn btn--like btn--stroke btn-reset">
+              <svg>
+                <use xlink:href="img/sprite.svg#like-icon"></use>
+              </svg>
+            </button>
+            <a href="#" class="product__link">
+              <div class="product__image">
+                <div class="product__switch image-switch">
+                  <div class="image-switch__item">
+                    <div class="image-switch__img">
+                      <picture>
+                        <source srcset="./img/catalogue/01-1-2x.webp" type="image/webp" media="(min-width: 1440px)" />
+                        <source srcset="./img/catalogue/01-1.webp" type="image/webp" />
+                        <img src="./img/catalogue/01-1.jpg" srcset="./img/catalogue/01-1-2x.jpg 2x" alt="Product 1" />
+                      </picture>
+                    </div>
+                  </div>
+                  <div class="image-switch__item">
+                    <div class="image-switch__img">
+                      <picture>
+                        <source srcset="./img/catalogue/01-2-2x.webp" type="image/webp" media="(min-width: 1440px)" />
+                        <source srcset="./img/catalogue/01-2.webp" type="image/webp" />
+                        <img src="./img/catalogue/01-2.webp" srcset="./img/catalogue/01-2-2x.webp" alt="Product 1" />
+                      </picture>
+                    </div>
+                  </div>
+                  <div class="image-switch__item">
+                    <div class="image-switch__img">
+                      <picture>
+                        <source srcset="./img/catalogue/02-1-2x.webp" type="image/webp" media="(min-width: 1440px)" />
+                        <source srcset="./img/catalogue/02-1.webp" type="image/webp" />
+                        <img src="./img/catalogue/02-1.jpg" srcset="./img/catalogue/02-1-2x.jpg 2x" alt="Product 1" />
+                      </picture>
+                    </div>
+                  </div>
+                </div>
+                <div class="product__slider swiper">
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                      <picture>
+                        <source srcset="./img/catalogue/01-1-2x.webp" type="image/webp" media="(min-width: 1440px)" />
+                        <source srcset="./img/catalogue/01-1.webp" type="image/webp" />
+                        <img src="./img/catalogue/01-1.jpg" srcset="./img/catalogue/01-1-2x.jpg 2x" alt="Product 1" />
+                      </picture>
+                    </div>
+                    <div class="swiper-slide">
+                      <picture>
+                        <source srcset="./img/catalogue/01-2-2x.webp" type="image/webp" media="(min-width: 1440px)" />
+                        <source srcset="./img/catalogue/01-2.webp" type="image/webp" />
+                        <img src="./img/catalogue/01-2.webp" srcset="./img/catalogue/01-2-2x.webp" alt="Product 1" />
+                      </picture>
+                    </div>
+                    <div class="swiper-slide">
+                      <picture>
+                        <source srcset="./img/catalogue/02-1-2x.webp" type="image/webp" media="(min-width: 1440px)" />
+                        <source srcset="./img/catalogue/02-1.webp" type="image/webp" />
+                        <img src="./img/catalogue/02-1.jpg" srcset="./img/catalogue/02-1-2x.jpg 2x" alt="Product 1" />
+                      </picture>
+                    </div>
+                  </div>
+                  <div class="swiper-pagination product-slider__pagination"></div>
+                </div>
+                <ul class="pruoduct__image-pagination image-pagination list-reset"></ul>
+              </div>
+              <div class="product__info product-info">
+                <div class="product-info__left">
+                  <h3>Vaskela</h3>
+                  <span>от 12000 <svg class="">
+                      <use xlink:href="img/sprite.svg#rub"></use>
+                    </svg></span>
+                </div>
+                <ul>
+                  <li class="product-info__item product-info__item--sq" data-sq="200">
+                    <div class="product-info__figure">
+                      200 <span>м<sup>2</sup></span>
+                    </div>
+                  </li>
+                  <li data-fl="2">
+                    <div class="product-info__figure">2 <span>этажей</span></div>
+                  </li>
+                  <li data-bed="5">
+                    <div class="product-info__figure">5 <span>спален</span></div>
+                  </li>
+                  <li data-bath="2">
+                    <div class="product-info__figure">2 <span>ванны</span></div>
+                  </li>
+
+                </ul>
+              </div>
+            </a>
+          </article>
+        </li>
+      </ul>
+
+      <ul class="pagination list-reset">
+        <li class="pagination__item">
+          <button class="btn-reset pagination__btn active">1</button>
+        </li>
+        <!-- <li class="pagination__item">
+          <button class="btn-reset pagination__btn">2</button>
+        </li>
+        <li class="pagination__item">
+          <button class="btn-reset pagination__btn">3</button>
+        </li> -->
+      </ul>
+    </div>
+  </div>
+</section>

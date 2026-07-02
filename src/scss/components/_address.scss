@@ -1,0 +1,102 @@
+.address {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  a,
+  span {
+    display: inline-block;
+    font-family: inherit;
+  }
+  &__tel,
+  &__whatsapp,
+  &__telega,
+  &__mail,
+  &__address {
+    padding: 12px 0;
+    padding-left: 36px;
+    color: var(--black-brand-color);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 160%;
+
+    font-style: normal;
+    letter-spacing: 0.32px;
+    background-position: left center;
+    background-size: 24px 24px;
+    background-repeat: no-repeat;
+    @media (min-width: 1440px) {
+      background-size: 2.4rem 2.4rem;
+      padding-left: 3.6rem;
+      font-size: 1.6rem;
+      letter-spacing: 0.032rem;
+    }
+  }
+  &__tel {
+    background-image: url("./../img/call-orange-icon.svg");
+    @include hover {
+      text-decoration: underline;
+    }
+  }
+  &__whatsapp {
+    background-image: url("./../img/whatsapp-icon.svg");
+    @include hover {
+      text-decoration: underline;
+    }
+  }
+  &__telega {
+    background-image: url("./../img/telegram-icon.svg");
+    @include hover {
+      text-decoration: underline;
+    }
+  }
+
+  &__mail {
+    background-image: url("./../img/mail-orange-icon.svg");
+    @include hover {
+      text-decoration: underline;
+    }
+  }
+  &__address {
+    background-image: url("./../img/map-orange-icon.svg");
+  }
+}
+.menu {
+  .address {
+    &__tel,
+    &__mail,
+    &__address {
+      color: var(--black-brand-color);
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 1.2px;
+
+      font-style: normal;
+      line-height: normal;
+      @media (min-width: 1440px) {
+        font-size: 1.2rem;
+        letter-spacing: 0.12rem;
+      }
+      @include mobile {
+        font-size: 14px;
+      }
+    }
+    &__tel {
+      background-image: url("./../img/call-icon.svg");
+    }
+    &__mail {
+      background-image: url("./../img/mail-icon.svg");
+    }
+    &__address {
+      background-image: url("./../img/map-icon.svg");
+      max-width: 170px;
+      @include mobile {
+        max-width: 190px;
+        text-align: left;
+        padding-left: 36px;
+      }
+      @media (min-width: 1440px) {
+        max-width: 17rem;
+      }
+    }
+  }
+}

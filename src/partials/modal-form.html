@@ -1,0 +1,73 @@
+<div class="modal modal-form" data-lenis-prevent>
+  <div class="modal-form__dialog" role="dialog" aria-modal="true" aria-labelledby="modal-form-title">
+    <button type="button" class="modal-form__close modal__close btn-reset" aria-label="Закрыть"></button>
+
+    <div class="modal-form__layout">
+      <aside class="modal-form__aside">
+        <p class="modal-form__label">Связаться с нами</p>
+        <h2 class="modal-form__title" id="modal-form-title">Обсудим ваш объект</h2>
+        <p class="modal-form__lead">
+          Оставьте заявку&nbsp;&mdash; инженер перезвонит, уточнит задачу
+          и&nbsp;подскажет оптимальное решение по&nbsp;срокам и&nbsp;стоимости.
+        </p>
+
+        <div class="modal-form__contacts">
+          <a class="modal-form__contact" href="tel:+79109710556">+7 910 971 05 56</a>
+          <a class="modal-form__contact" href="tel:+79109710567">+7 910 971 05 67</a>
+          <a class="modal-form__contact" href="mailto:Yareltek@yandex.ru">Yareltek@yandex.ru</a>
+          <p class="modal-form__schedule">Пн–Вс, 9:00–21:00</p>
+          <p class="modal-form__address">г.&nbsp;Ярославль, ул.&nbsp;Лисицина, 2В</p>
+        </div>
+      </aside>
+
+      <form class="modal-form__form form">
+        <div class="modal-form__form-head">
+          <h3 class="modal-form__form-title">Заявка на расчёт</h3>
+          <p class="modal-form__form-note">Перезвоним в&nbsp;течение рабочего дня</p>
+        </div>
+
+        <div class="modal-form__grid">
+          <label class="form__label modal-form__field">
+            <span>Имя</span>
+            <input type="text" class="form__input" name="name" placeholder="Как к вам обращаться" autocomplete="name" />
+          </label>
+          <label class="form__label modal-form__field">
+            <span>Телефон</span>
+            <input type="tel" class="form__input" name="phone" placeholder="+7 (___) ___-__-__" autocomplete="tel" />
+          </label>
+        </div>
+
+        <label class="form__label modal-form__field">
+          <span>E-mail</span>
+          <input type="email" class="form__input" name="email" placeholder="example@mail.ru" autocomplete="email" />
+        </label>
+
+        <label class="form__label modal-form__field">
+          <span>Тип объекта</span>
+          <select class="form__input modal-form__select" name="object-type">
+            <option value="" disabled selected>Выберите тип</option>
+            <option value="apartment">Квартира</option>
+            <option value="house">Частный дом</option>
+            <option value="commercial">Коммерческий объект</option>
+            <option value="other">Другое</option>
+          </select>
+        </label>
+
+        <label class="form__label modal-form__field">
+          <span>Комментарий</span>
+          <textarea class="form__input modal-form__textarea" name="comment" rows="3"
+            placeholder="Площадь, этап ремонта, какие системы нужны"></textarea>
+        </label>
+
+        <button class="btn btn--fill form__btn modal-form__submit btn-reset" type="submit">
+          Отправить заявку
+        </button>
+
+        <p class="form__privacy modal-form__privacy">
+          Нажимая кнопку, вы принимаете условия
+          <a href="#" target="_blank">политики конфиденциальности</a>
+        </p>
+      </form>
+    </div>
+  </div>
+</div>

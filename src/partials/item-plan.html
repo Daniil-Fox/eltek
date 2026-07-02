@@ -1,0 +1,57 @@
+<section class="item-plan">
+  <div class="main-container">
+    <h2 class="title item-plan__title container">Планировка</h2>
+    <div class="plan">
+      <div class="plan__buttons">
+        <button>
+          1 этаж
+        </button>
+        <button>2 этаж</button>
+        <button>
+          Цокольный этаж
+        </button>
+      </div>
+      <div class="plan__content">
+        <div class="plan__content-buttons">
+          <button class="btn btn-reset btn--print btn--stroke plan-btn-print">
+            <svg>
+              <use xlink:href="img/sprite.svg#print-icon"></use>
+            </svg>
+            <span>Распечатать</span>
+          </button>
+          <a href="./img/plan/01-source.webp" class="btn btn-reset btn--fullscreen btn--fill" data-fancybox="fancy-plan"
+            data-caption="" data-print="plan">
+            <svg>
+              <use xlink:href="img/sprite.svg#fullscreen-icon"></use>
+            </svg>
+          </a>
+          <div class="gallery-plan" style="display: none">
+            <a href="./img/plan/01-source.webp" data-fancybox="fancy-plan" data-caption="" data-print="plan"></a>
+            <a href="./img/plan/01-source.webp" data-fancybox="fancy-plan" data-caption="" data-print="plan"></a>
+          </div>
+        </div>
+        <div class="plan__item active" data-plan-item="0" data-plan-src="./img/plan/01-source.webp">
+          <picture>
+            <source srcset="./img/plan/01-mob.webp" media="(max-width: 769px)" />
+            <source srcset="./img/plan/01.webp" />
+            <img src="./img/plan/01.png" alt="1 Floor" />
+          </picture>
+        </div>
+        <div class="plan__item" data-plan-item="1" data-plan-src="./img/plan/01-source.webp">
+          <picture>
+            <source srcset="./img/plan/01-mob.webp" media="(max-width: 769px)" />
+            <source srcset="./img/plan/01.webp" />
+            <img src="./img/plan/01.png" alt="1 Floor" />
+          </picture>
+        </div>
+        <div class="plan__item" data-plan-item="2" data-plan-src="./img/plan/01-source.webp">
+          <picture>
+            <source srcset="./img/plan/01-mob.webp" media="(max-width: 769px)" />
+            <source srcset="./img/plan/01.webp" />
+            <img src="./img/plan/01.png" alt="1 Floor" />
+          </picture>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

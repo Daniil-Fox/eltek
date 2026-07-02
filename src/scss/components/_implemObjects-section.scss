@@ -1,0 +1,61 @@
+.implemObjects-section {
+  h1 {
+    margin: 0;
+    margin-bottom: 16px;
+    color: var(--black-brand-color);
+    text-align: center;
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 0.28px;
+
+    @media (min-width: 1441px) {
+      margin-bottom: 1.6rem;
+      font-size: 2.8rem;
+      letter-spacing: 0.028rem;
+    }
+
+    @include mobile {
+      font-size: 20px;
+      letter-spacing: 0.2px;
+      padding: 16px;
+      padding-top: 0;
+    }
+
+  }
+
+  .slider-control__btn {
+    opacity: 0;
+
+    &--prev {
+      transform: translateX(-15px) translateY(-50%);
+    }
+
+    &--next {
+      transform: translateX(15px) translateY(-50%);
+    }
+
+    transition: opacity .3s ease-in,
+    transform .3s ease-in;
+  }
+
+  .catalogue__item {
+    min-width: 0;
+  }
+
+  .implemPhoto-section__btn--fullscreen {
+    opacity: 0;
+    transition: opacity .3s ease-in;
+  }
+
+  .product__slider {
+    display: block;
+    transition: opacity .3s ease-in;
+  }
+
+  // .product-slider__pagination {
+  //   opacity: 1;
+  //   transform: unset;
+  // }
+}

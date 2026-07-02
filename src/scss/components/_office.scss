@@ -1,0 +1,91 @@
+.office {
+  padding-top: 120px;
+  padding-bottom: 160px;
+  overflow: hidden;
+  text-align: center;
+  @include mobile {
+    padding-bottom: 53px;
+  }
+  &__btn {
+    margin-bottom: 80px;
+    @media (min-width: 1440px){
+      margin-bottom: 8rem;
+    }
+    @include mobile {
+      margin-bottom: 55px;
+    }
+  }
+  &__title {
+    margin-bottom: 60px;
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    @media (min-width: 1440px) {
+      margin-bottom: 6rem;
+      font-size: 4.8rem;
+    }
+    @include mobile {
+      font-size: 24px;
+      margin-bottom: 54px;
+    }
+  }
+  &__row {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    margin-bottom: 64px;
+    @media (min-width: 1440px) {
+      margin-bottom: 6.4rem;
+    }
+    @include mobile {
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 40px;
+    }
+  }
+
+  &__address {
+    max-width: 210px;
+    text-align: left;
+    &:not(:last-child){
+      margin-right: 20px;
+      @media (min-width: 1440px){
+        margin-right: 2rem;
+      }
+    }
+    @media (min-width: 1440px) {
+      max-width: 21rem;
+    }
+    @include mobile {
+    }
+  }
+  &__slider {
+    @include mobile {
+      height: 160px;
+    }
+  }
+  &__img {
+    position: relative;
+    width: 593px;
+    height: 360px;
+    @media (min-width: 1440px){
+      width: 59.3rem;
+      height: 36rem;
+    }
+    @include mobile {
+      width: 264px;
+      height: 160px;
+    }
+    img {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+    }
+  }
+  .swiper-slide {
+    cursor: grab;
+  }
+}

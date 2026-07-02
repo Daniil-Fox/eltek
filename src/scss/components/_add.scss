@@ -1,0 +1,105 @@
+.add {
+  padding: 65px 108px 66px 166px;
+  background: rgba(255, 150, 92, 0.2);
+  position: relative;
+  z-index: 2;
+
+  @media (min-width: 1440px) {
+    padding: 6.5rem 10.8rem 6.6rem 16.6rem;
+  }
+
+  @include mobile {
+    padding: 64px 16px;
+  }
+
+  &__items {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @include mobile {
+      flex-direction: column;
+    }
+  }
+
+  &--itemCart {
+    padding: 120px 108px;
+
+    @media (min-width: 1440px) {
+      padding: 12rem 10.8rem;
+    }
+
+    @media screen and (max-width: 1440px) {
+      padding: 12rem 10.8rem;
+    }
+
+    @include mobile {
+      padding: 120px 16px;
+    }
+
+    .add-item {
+      max-width: 421.5px;
+
+      @media (min-width: 1441px) {
+        min-width: 42.15rem;
+      }
+
+      @include mobile {
+        max-width: 240px;
+      }
+
+      &:not(:last-child) {
+        margin-right: unset;
+
+        @media (min-width: 1440px) {
+          margin-right: unset;
+        }
+      }
+    }
+  }
+}
+
+.add-item {
+  flex: 1;
+  max-width: 400px;
+
+  h3 {
+    margin: 0;
+    margin-bottom: 30px;
+    color: var(--black-brand-color);
+    text-align: center;
+    font-size: 32px;
+    font-weight: 700;
+    letter-spacing: 1.6px;
+
+    @media (min-width: 1440px) {
+      font-size: 3.2rem;
+      margin-bottom: 3rem;
+      letter-spacing: 0.16rem;
+    }
+
+    @include mobile {
+      font-size: 24px;
+    }
+  }
+
+  &:not(:last-child) {
+
+    // margin-right: 268px;
+    @media (min-width: 1440px) {
+      // margin-right: 26.8rem;
+      max-width: 40rem;
+    }
+
+    @include mobile {
+      margin-right: 0;
+      margin-bottom: 64px;
+    }
+  }
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+}

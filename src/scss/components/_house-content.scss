@@ -1,0 +1,324 @@
+.house-content {
+  &--expanded {
+    padding-bottom: 70px;
+
+    @media (min-width: 1440px) {
+      padding-bottom: 7rem;
+    }
+
+    @include mobile {
+      padding-bottom: 0;
+    }
+  }
+
+  &__container {
+    position: relative;
+
+    width: 100%;
+    max-width: 100%;
+    padding-left: 30px;
+
+    @include mobile {
+      padding-left: unset;
+      padding: 0 16px;
+    }
+  }
+
+  &__grid {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    justify-content: flex-start;
+    gap: 0 50px;
+    margin-bottom: 27px;
+
+    &--mt {
+      margin-top: 190px;
+
+      @include mobile {
+        margin-top: 0;
+      }
+    }
+
+    @media (min-width: 1440px) {
+      gap: 0 5rem;
+    }
+
+    @include mobile {
+      grid-template-columns: 1fr;
+      gap: 0;
+    }
+  }
+
+  &__title {
+    margin-bottom: 45px;
+    line-height: normal;
+    letter-spacing: 2.4px;
+
+    @media (min-width: 1440px) {
+      margin-bottom: 4.5rem;
+      letter-spacing: 0.24rem;
+    }
+
+    @include mobile {
+      letter-spacing: 0.48px;
+    }
+  }
+
+  &__content {
+    max-width: 100%;
+    width: 100%;
+    position: relative;
+    z-index: 5;
+    grid-column: 6 span;
+    padding-right: 15px;
+    order: 1;
+
+    @media (min-width: 1440px) {
+      margin-right: 6rem;
+    }
+
+    @include mobile {
+      grid-column: 1;
+      padding-top: 120px;
+      margin-bottom: 50px;
+    }
+
+    &--gap {
+      padding-top: 70px;
+
+      @media (min-width: 1440px) {
+        padding-top: 7rem;
+      }
+    }
+
+    &--order {
+      order: 0;
+    }
+
+    &--end {
+      align-self: center;
+
+      // transform: translate(-30px, 25%);
+      @media (min-width: 1440px) {
+        // transform: translate(-3rem, 25%);
+      }
+
+      @include mobile {
+        transform: unset;
+        align-self: unset;
+      }
+    }
+
+    &--small {
+      grid-column: 4 span;
+
+      @include mobile {
+        align-self: flex-end;
+        grid-column: 1;
+        margin-top: 0;
+        padding-bottom: 100px;
+        padding-top: 110px;
+      }
+    }
+  }
+
+  &__btn {
+    margin-bottom: 45px;
+
+    @media (min-width: 1440px) {
+      margin-bottom: 4.5rem;
+    }
+  }
+
+  &__text {
+    display: flex;
+
+    p {
+      flex: 1;
+      margin: 0;
+      color: var(--white-color);
+      line-height: 160%;
+      letter-spacing: 0.32px;
+      font-weight: 400;
+      font-size: 16px;
+
+      &:not(:last-child) {
+        margin-right: 30px;
+
+        @media (min-width: 1440px) {
+          margin-right: 3rem;
+        }
+      }
+
+      @media (min-width: 1440px) {
+        font-size: 1.6rem;
+        letter-spacing: 0.032rem;
+      }
+
+      @include mobile {
+        flex: unset;
+        margin-bottom: 1em;
+      }
+    }
+
+    @include mobile {
+      flex-wrap: wrap;
+    }
+  }
+
+  &__img {
+    margin-left: -30px;
+    margin-bottom: 20px;
+
+    @media (min-width: 1440px) {
+      margin-left: -3rem;
+      margin-bottom: 2rem;
+    }
+  }
+
+  &__image {
+    grid-column: 6 span;
+    position: relative;
+    z-index: 2;
+    display: flex;
+
+    picture {
+      width: 100%;
+    }
+
+    img {
+
+      width: 100%;
+    }
+
+    @include mobile {
+      img {
+        width: 100%;
+        transform: translateY(--off-px);
+      }
+
+      grid-column: 1;
+    }
+
+    &--mini {
+      position: absolute;
+      bottom: 0;
+      left: 23.6%;
+      transform: translateY(84.85%);
+
+      picture {
+        width: 100%;
+        height: 100%;
+      }
+
+      &-mob {
+        @include mobile {
+          left: unset;
+          right: -16px;
+        }
+
+        @media (max-width: 475px) {
+          width: 165px !important;
+          height: 158px;
+          left: unset;
+          right: -16px;
+
+          picture {
+            width: 100%;
+            height: 100%;
+          }
+        }
+      }
+    }
+
+    &--big {
+      grid-column: 8 span;
+
+      @include mobile {
+        grid-column: 1 span;
+      }
+    }
+
+    &--eco-mini {
+      &-1 {
+        left: unset;
+        right: 30px;
+        transform: translateY(57%);
+
+        @media (min-width: 1440px) {
+          right: 3rem;
+        }
+      }
+
+      &-2 {
+        left: unset;
+        right: 0;
+        bottom: 18%;
+
+        @include mobile {
+          left: 0;
+          right: unset;
+          width: 240px !important;
+        }
+      }
+
+      &-3 {}
+    }
+
+    &--last {
+      text-align: center;
+    }
+
+    &--centered {
+      display: block;
+      position: relative;
+      z-index: 4;
+      width: 48%;
+      bottom: 0;
+      margin: 0 auto;
+      transform: translateY(-30%);
+      height: 552px;
+      width: 552px;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      @media (min-width: 1440px) {
+        height: 55.2rem;
+        width: 55.2rem;
+      }
+
+      @include mobile {
+        width: 220px;
+        height: 220px;
+        transform: translateY(-50%);
+      }
+    }
+  }
+}
+
+.house-content__row--dark {
+  .house-content {
+    &__title {
+      color: var(--black-brand-color);
+    }
+
+    &__text {
+      p {
+        color: var(--black-brand-color);
+      }
+    }
+  }
+}
+
+.house-content__grid.mob-order-0 {
+  margin-bottom: 70px;
+
+  @media (min-width: 1441px) {
+    margin-bottom: 7rem;
+  }
+}

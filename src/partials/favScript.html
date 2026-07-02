@@ -1,0 +1,471 @@
+<script>
+  const data = {
+    "nisalahti": {
+      title: "nisalahti",
+      img: "./img/hero/hero1-1x.jpg",
+      srcset: './img/hero/hero1-2x.jpg',
+      link: "#",
+      info: {
+        square: "100",
+        floors: "1",
+        bedrooms: "6",
+        bathrooms: "3",
+        place: "72"
+      }
+    },
+    "vaskela": {
+      title: "vaskela",
+      img: "./img/hero/hero2-1x.jpg",
+      srcset: './img/hero/hero2-2x.jpg',
+      link: "#",
+      info: {
+        square: "100",
+        floors: "1",
+        bedrooms: "6",
+        bathrooms: "3",
+        place: "72"
+      }
+    },
+    "ostamo": {
+      title: "ostamo",
+      img: "./img/hero/hero3-1x.jpg",
+      srcset: './img/hero/hero3-2x.jpg',
+      link: "#",
+      info: {
+        square: "100",
+        floors: "1",
+        bedrooms: "6",
+        bathrooms: "3",
+        place: "72"
+      }
+    },
+    "lautala": {
+      title: "lautala",
+      img: "./img/hero/hero4-1x.jpg",
+      srcset: './img/hero/hero4-2x.jpg',
+      link: "#",
+      info: {
+        square: "100",
+        floors: "1",
+        bedrooms: "6",
+        bathrooms: "3",
+        place: "72"
+      }
+    },
+  }
+  const favBtns = document.querySelectorAll(".btn--like");
+  const favBtnQuantity = document.querySelectorAll(".favorites-btn__quantity");
+  var favElements = JSON.parse(localStorage.getItem("goods")) ? JSON.parse(localStorage.getItem("goods")) : []
+  var favId = JSON.parse(localStorage.getItem("id")) ? JSON.parse(localStorage.getItem("id")) : []
+
+  function declOfNum(number, words) {
+    return words[(number % 100 > 4 && number % 100 < 20) ? 2 : [2, 0, 1, 1, 1, 2][(number % 10 < 5) ? Math.abs(number) % 10 : 5]];
+  }
+
+  const deleteFav = (id) => {
+    updateStorage(null, null, id);
+    document
+      .querySelector(`[data-id="${id}"]`)
+      .querySelector(".btn--like")
+      .classList.remove("active");
+    printQuantity();
+  };
+
+  favBtns.forEach((el) => {
+    if (el.closest(".projects-card")) {
+      el.closest(".projects-card").setAttribute("data-id", new Date().getTime());
+      el.addEventListener("click", (e) => {
+        let self = e.currentTarget;
+        let parent = self.closest(".projects-card");
+        let id = parent.dataset.id;
+        if (!self.classList.contains("active")) {
+          let img = parent.querySelector(".projects-card__img").src;
+          let srcset = parent.querySelector("source").getAttribute("srcset");
+          let title = parent.querySelector(".projects-card__title").textContent;
+          let link = parent
+            .querySelector(".projects-card__more")
+            .getAttribute("href");
+          let info = {
+            square: parent
+              .querySelector(".projects-card__item--sq")
+              .querySelector(".projects-card__figure").textContent,
+            floors: parent
+              .querySelector(".projects-card__item--fl")
+              .querySelector(".projects-card__figure").textContent,
+            bedrooms: parent
+              .querySelector(".projects-card__item--bed")
+              .querySelector(".projects-card__figure").textContent,
+            bathrooms: parent
+              .querySelector(".projects-card__item--bath")
+              .querySelector(".projects-card__figure").textContent,
+            place: parent
+              .querySelector(".projects-card__item--pl")
+              .querySelector(".projects-card__figure").textContent,
+          };
+          self.classList.add("active");
+
+          updateStorage(generateFavoriteItem(img, srcset, title, info, link, id), id);
+          printQuantity();
+        } else {
+          deleteFav(id);
+        }
+      });
+    }
+
+    if (el.closest(".hero__slider")) {
+      el.closest(".swiper-slide").setAttribute("data-id", new Date().getTime());
+      el.addEventListener("click", (e) => {
+        let self = e.currentTarget;
+        let id = el.closest(".swiper-slide").dataset.id;
+        if (!self.classList.contains("active")) {
+          self.classList.add("active");
+          let title = el
+            .closest(".swiper-slide")
+            .querySelector(".slide__title")
+            .textContent.toLowerCase()
+            .trim();
+          updateStorage(generateFavoriteItem(
+            data[title].img,
+            data[title].srcset,
+            data[title].title,
+            data[title].info,
+            data[title].link,
+            id
+          ), id);
+          printQuantity();
+        } else {
+          deleteFav(id);
+        }
+      });
+    }
+
+    if (el.closest(".popular-card")) {
+      el.closest(".popular-card").setAttribute("data-id", new Date().getTime());
+      el.addEventListener("click", (e) => {
+        let self = e.currentTarget;
+        let id = el.closest(".popular-card").dataset.id;
+        if (!self.classList.contains("active")) {
+          self.classList.add("active");
+          let title = el
+            .closest(".popular-card")
+            .querySelector(".popular-card__title").textContent;
+          let link = el
+            .closest(".popular-card")
+            .querySelector(".popular-card__more").href;
+          let img = document
+            .querySelector(".popular__images")
+            .querySelector(
+              `img[data-item-id="${el.closest(".popular-card").dataset.itemId}"]`
+            ).src;
+          let srcset = img;
+          let info = {
+            square: el
+              .closest(".popular-card")
+              .querySelector(".popular-card__item--sq")
+              .querySelector(".popular-card__figure").textContent,
+            floors: el
+              .closest(".popular-card")
+              .querySelector(".popular-card__item--fl")
+              .querySelector(".popular-card__figure").textContent,
+            bedrooms: el
+              .closest(".popular-card")
+              .querySelector(".popular-card__item--bed")
+              .querySelector(".popular-card__figure").textContent,
+            bathrooms: el
+              .closest(".popular-card")
+              .querySelector(".popular-card__item--bath")
+              .querySelector(".popular-card__figure").textContent,
+            place: el
+              .closest(".popular-card")
+              .querySelector(".popular-card__item--pl")
+              .querySelector(".popular-card__figure").textContent,
+          };
+          updateStorage(generateFavoriteItem(img, srcset, title, info, link, id), id);
+          printQuantity();
+        } else {
+          deleteFav(id);
+        }
+      });
+    }
+
+    if (el.closest(".popular__images")) {
+      el.closest(".swiper-slide").setAttribute("data-id", new Date().getTime());
+
+      el.addEventListener("click", (e) => {
+        let self = e.currentTarget;
+        if (!self.classList.contains("active")) {
+          self.classList.add("active");
+          let id = el.closest(".swiper-slide").dataset.id;
+          const infoBlock = document.querySelector(
+            `.popular-card[data-item-id="${el.closest(".swiper-slide").querySelector("img").dataset.itemId
+            }"]`
+          );
+          let title = infoBlock.querySelector(".popular-card__title").textContent;
+          let link = infoBlock.querySelector(".popular-card__more").href;
+          let img = el.closest(".swiper-slide").querySelector("img").src;
+          let srcset = "";
+          el.closest(".swiper-slide").querySelector("source")
+            ? (srcset = el
+              .closest(".swiper-slide")
+              .querySelector("source").srcset)
+            : null;
+          let info = {
+            square: infoBlock
+              .querySelector(".popular-card__item--sq")
+              .querySelector(".popular-card__figure").textContent,
+            floors: infoBlock
+              .querySelector(".popular-card__item--fl")
+              .querySelector(".popular-card__figure").textContent,
+            bedrooms: infoBlock
+              .querySelector(".popular-card__item--bed")
+              .querySelector(".popular-card__figure").textContent,
+            bathrooms: infoBlock
+              .querySelector(".popular-card__item--bath")
+              .querySelector(".popular-card__figure").textContent,
+            place: infoBlock
+              .querySelector(".popular-card__item--pl")
+              .querySelector(".popular-card__figure").textContent,
+          };
+          updateStorage(generateFavoriteItem(img, srcset, title, info, link, id), id);
+          printQuantity();
+        } else {
+          let id = el.closest(".swiper-slide").dataset.id;
+          document
+            .querySelector(`[data-id="${id}"]`)
+            .querySelector(".btn--like")
+            .classList.remove("active");
+          printQuantity();
+        }
+      });
+    }
+
+    if (el.closest(".item-product")) {
+      el.closest(".item-product").setAttribute("data-id", new Date().getTime());
+      el.addEventListener("click", (e) => {
+        let self = e.currentTarget;
+        let parent = self.closest(".item-product");
+        let id = parent.dataset.id;
+        if (!self.classList.contains("active")) {
+          let img = parent.querySelector(".card").querySelector("img").src;
+          let srcset = parent
+            .querySelector(".card")
+            .querySelector("source")
+            .getAttribute("srcset");
+          let title = document.querySelector("h1").textContent;
+          let link = parent.querySelector(".btn--share").getAttribute("href");
+          let info = {
+            square: parseInt(parent.querySelector(".chars-item--sq dd").textContent),
+            floors: parent.querySelectorAll(".chars-item--fl").length,
+            bedrooms: parseInt(
+              parent.querySelector(".chars-item--bed dd").textContent
+            ),
+            bathrooms: parseInt(
+              parent.querySelector(".chars-item--bath dd").textContent
+            ),
+            place: parseInt(parent.querySelector(".chars-item--pl dd").textContent),
+          };
+          self.classList.add("active");
+          updateStorage(generateFavoriteItem(img, srcset, title, info, link, id), id);
+          printQuantity();
+        } else {
+          deleteFav(id);
+        }
+      });
+    }
+    if (el.closest(".product")) {
+
+      el.closest(".product").setAttribute("data-id", new Date().getTime());
+      el.addEventListener("click", (e) => {
+        let self = e.currentTarget;
+        let parent = self.closest(".product");
+        let id = parent.dataset.id;
+        if (!self.classList.contains("active")) {
+          let img = parent.querySelector("img").src;
+          let srcset = parent
+            .querySelector("source")
+            .getAttribute("srcset");
+
+          const data = parent.querySelector('.product-info')
+          let title = data.querySelector("h3").textContent;
+          let link = parent.querySelector(".product__link").getAttribute("href");
+          let info = {
+            square: parent.querySelector("[data-sq]").dataset.sq,
+            floors: parent.querySelector("[data-fl]").dataset.fl,
+            bedrooms: parent.querySelector("[data-bed]").dataset.bed,
+            bathrooms: parent.querySelector("[data-bath]").dataset.bath,
+          }
+          self.classList.add("active");
+          updateStorage(generateFavoriteItem(img, srcset, title, info, link, id), id);
+          printQuantity();
+        } else {
+          deleteFav(id);
+        }
+      });
+    }
+  });
+  const printQuantity = () => {
+    let length = JSON.parse(localStorage.getItem("goods")) ? JSON.parse(localStorage.getItem("goods")).length : 0;
+    favBtnQuantity.forEach((el) => (el.textContent = length));
+  };
+
+
+  const generateFavoriteItem = (img, srcset, title, info, link, id) => {
+    return `
+      <li class="catalogue__item">
+          <article class="catalogue__product product" data-id="${id}">
+            <button class="product__btn btn btn--like btn--stroke btn-reset active">
+              <svg>
+                <use xlink:href="img/sprite.svg#like-icon"></use>
+              </svg>
+            </button>
+            <a href="#" class="product__link">
+              <div class="product__image">
+                <div class="product__switch image-switch">
+                  <div class="image-switch__item">
+                    <div class="image-switch__img">
+                      <picture>
+                        <source srcset="${srcset}" type="image/jpg" media="(min-width: 1440px)" />
+                        <source srcset="${srcset}" type="image/jpg" />
+                        <img src="${img}" srcset="${img}" alt="Product 1" />
+                      </picture>
+                    </div>
+                  </div>
+                  <div class="image-switch__item">
+                    <div class="image-switch__img">
+                      <picture>
+                        <source srcset="${srcset}" type="image/jpg" media="(min-width: 1440px)" />
+                        <source srcset="${srcset}" type="image/jpg" />
+                        <img src="${img}" srcset="${img}" alt="Product 1" />
+                      </picture>
+                    </div>
+                  </div>
+                  <div class="image-switch__item">
+                    <div class="image-switch__img">
+                      <picture>
+                        <source srcset="${srcset}" type="image/jpg" media="(min-width: 1440px)" />
+                        <source srcset="${srcset}" type="image/jpg" />
+                        <img src="${img}" srcset="${img}" alt="Product 1" />
+                      </picture>
+                    </div>
+                  </div>
+                </div>
+                <div class="product__slider swiper">
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                      <picture>
+                        <source srcset="${srcset}" type="image/jpg" media="(min-width: 1440px)" />
+                        <source srcset="${srcset}" type="image/jpg" />
+                        <img src="${img}" srcset="${img}" alt="Product 1" />
+                      </picture>
+                    </div>
+                    <div class="swiper-slide">
+                      <picture>
+                        <source srcset="${srcset}" type="image/jpg" media="(min-width: 1440px)" />
+                        <source srcset="${srcset}" type="image/jpg" />
+                        <img src="${img}" srcset="${img}" alt="Product 1" />
+                      </picture>
+                    </div>
+                    <div class="swiper-slide">
+                      <picture>
+                        <source srcset="${srcset}" type="image/jpg" media="(min-width: 1440px)" />
+                        <source srcset="${srcset}" type="image/jpg" />
+                        <img src="${img}" srcset="${img}" alt="Product 1" />
+                      </picture>
+                    </div>
+                  </div>
+                  <div class="swiper-pagination product-slider__pagination"></div>
+                </div>
+                <ul class="pruoduct__image-pagination image-pagination list-reset"></ul>
+              </div>
+              <div class="product__info product-info">
+                <div class="product-info__left">
+                  <h3>${title}</h3>
+                  <span>от 12000 <svg class="">
+                      <use xlink:href="img/sprite.svg#rub"></use>
+                    </svg></span>
+                </div>
+                <ul>
+                  <li class="product-info__item product-info__item--sq" data-sq="${info.square}">
+                    <div class="product-info__figure">
+                      ${info.square} <span>м<sup>2</sup></span>
+                    </div>
+                  </li>
+                  <li data-fl="${info.floors}">
+                    <div class="product-info__figure">${info.floors} <span>${declOfNum(info.floors, ['этаж', 'этажа', 'этажей'])}</span></div>
+                  </li>
+                  <li data-bed="${info.bedrooms}">
+                    <div class="product-info__figure">${info.bedrooms} <span>${declOfNum(info.bedrooms, ['спальня', 'спальни', 'спален'])}</span></div>
+                  </li>
+                  <li data-bath="${info.bathrooms}">
+                    <div class="product-info__figure">${info.bathrooms} <span>${declOfNum(info.bathrooms, ['ванная', 'ванных', 'ванн'])}</span></div>
+                  </li>
+                </ul>
+              </div>
+            </a>
+          </article>
+        </li>
+    `;
+  };
+  const catalogueContent = document.querySelector('.catalogue--favorites')
+
+  catalogueContent?.addEventListener('click', e => {
+    if (e.target.classList.contains('btn--like')) {
+      e.target.classList.remove('active')
+      deleteFav(e.target.closest('[data-id]').dataset.id)
+
+      catalogueContent.removeChild(e.target.closest('li'))
+      printQuantity()
+    }
+  })
+  const initialState = () => {
+    if (localStorage.getItem("goods")) {
+      JSON.parse(localStorage.getItem("goods"))?.forEach(item => {
+        if (catalogueContent) {
+          catalogueContent.innerHTML += item
+        }
+      })
+    }
+
+    printQuantity();
+    document
+      .querySelectorAll("[data-id]")
+      .forEach(el => {
+        JSON.parse(localStorage.getItem("id"))?.forEach(id => {
+          if (el.dataset.id == id) {
+            el.querySelector('.btn--like').classList.add('active')
+          }
+        })
+      })
+  };
+
+  const updateStorage = (element = '', id = null, delId = null) => {
+    if (element && id) {
+      favElements.push(element)
+      favId.push(id)
+    }
+
+    if (delId) {
+      let index = -1;
+      for (let i = 0; i < favElements.length; i++) {
+        if (favId[i] == delId) {
+          index = i;
+        }
+      }
+      favElements.splice(index, 1)
+      favId.splice(index, 1)
+    }
+
+    if (favElements.length) {
+      localStorage.setItem("goods", JSON.stringify(favElements));
+    } else {
+      localStorage.removeItem("goods");
+    }
+    if (favId.length) {
+      localStorage.setItem("id", JSON.stringify(favId));
+    } else {
+      localStorage.removeItem("id");
+    }
+  };
+
+  initialState();
+</script>

@@ -22,6 +22,7 @@
     max-height: var(--contact-fab-size);
     overflow: hidden;
     transition: max-height 0.35s ease;
+    filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.1));
   }
 
   &:hover &__list,

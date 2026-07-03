@@ -1,0 +1,31 @@
+.eyebrow {
+  @include ui-eyebrow;
+
+  &--sm {
+    @include ui-eyebrow-sm;
+  }
+
+  &--mb-sm {
+    margin-bottom: 12px;
+
+    @media (min-width: 1440px) {
+      margin-bottom: 1.2rem;
+    }
+  }
+
+  &--mb-md {
+    margin-bottom: 16px;
+
+    @media (min-width: 1440px) {
+      margin-bottom: 1.6rem;
+    }
+  }
+
+  &--mb-lg {
+    margin-bottom: 20px;
+
+    @media (min-width: 1440px) {
+      margin-bottom: 2rem;
+    }
+  }
+}

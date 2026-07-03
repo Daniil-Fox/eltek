@@ -1,0 +1,51 @@
+<section class="favorites-page">
+  <div class="breadcrumbs favorites-page__breadcrumbs">
+    <ul>
+      <li>
+        <a href="./index.html">Главная</a>
+      </li>
+      <li>
+        <a>Избранное</a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="favorites-page__intro main-container">
+    <p class="eyebrow eyebrow--mb-sm">Сохранённые проекты</p>
+    <div class="favorites-page__head">
+      <h1 class="favorites-page__title title">Избранное</h1>
+      <button type="button" class="favorites-page__clear btn btn--stroke btn-reset">
+        Очистить всё
+      </button>
+    </div>
+    <p class="favorites-page__lead">
+      Проекты, которые вы&nbsp;отметили на&nbsp;странице портфолио&nbsp;&mdash; вернитесь к&nbsp;ним
+      в&nbsp;любой момент
+    </p>
+  </div>
+
+  <!-- WordPress: цикл по избранным проектам. При наличии карточек скройте блок .favorites-page__empty -->
+  <div class="favorites-page__grid main-container">
+    <!--
+    <article class="favorites-page__card">
+      <a class="favorites-page__card-link" href="./product.html">
+        <div class="favorites-page__card-media">
+          <img src="./img/chensi/01.webp" alt="Новые ченсы" loading="lazy" />
+        </div>
+        <div class="favorites-page__card-body">
+          <h2 class="favorites-page__card-title">Новые ченсы</h2>
+          <p class="favorites-page__card-meta">Электромонтаж · 85 м² · Ярославль</p>
+        </div>
+      </a>
+      <button type="button" class="favorites-page__remove btn-reset active" aria-label="Удалить из избранного">
+        <svg aria-hidden="true"><use xlink:href="img/sprite.svg#like-icon"></use></svg>
+      </button>
+    </article>
+    -->
+  </div>
+
+  <div class="favorites-page__empty main-container">
+    <p class="favorites-page__empty-text">Пока нет сохранённых проектов</p>
+    <a href="./catalogue.html" class="btn btn--fill">Смотреть портфолио</a>
+  </div>
+</section>

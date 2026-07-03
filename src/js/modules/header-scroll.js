@@ -25,6 +25,32 @@ export function initHeaderScroll() {
   const updateHeader = (scrollY, direction) => {
     updateMobileMenu(scrollY);
 
+    const isInnerHeader =
+      header.classList.contains("header--dark") ||
+      header.classList.contains("header--solid") ||
+      header.classList.contains("dark");
+
+    if (isInnerHeader) {
+      header.classList.remove("is-scrolled");
+
+      if (scrollY <= SCROLL_OFFSET) {
+        header.classList.remove("is-hide");
+        lastScroll = scrollY;
+        return;
+      }
+
+      if (direction === 1 && scrollY > lastScroll) {
+        header.classList.add("is-hide");
+      }
+
+      if (direction === -1) {
+        header.classList.remove("is-hide");
+      }
+
+      lastScroll = scrollY;
+      return;
+    }
+
     if (scrollY <= SCROLL_OFFSET) {
       header.classList.remove("is-scrolled", "is-hide");
       lastScroll = scrollY;

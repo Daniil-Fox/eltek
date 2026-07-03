@@ -56,6 +56,10 @@ export function initModals() {
     openForm("contact-form");
   });
 
+  document.querySelector(".contacts-page__form-btn")?.addEventListener("click", (e) => {
+    openForm(e.currentTarget.dataset.formId);
+  });
+
   document
     .querySelector(".mobile-menu__btn--call")
     ?.addEventListener("click", (e) => {

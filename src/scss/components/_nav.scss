@@ -1,7 +1,7 @@
 .nav {
   > ul {
     display: flex;
-    align-items: center;
+    align-items: baseline;
     overflow: visible;
     gap: 24px;
 
@@ -185,7 +185,19 @@
   }
 }
 
-.header--secondary .nav {
+.header--dark .nav {
+  > ul > li > a,
+  .nav__item-head > a {
+    color: rgba(251, 251, 251, 0.88);
+
+    @include hover {
+      color: var(--focus-color);
+    }
+  }
+}
+
+.header--secondary .nav,
+.header.dark .nav {
   .sub-menu {
     background-color: var(--white-color);
     box-shadow: 0 12px 32px rgba(27, 32, 38, 0.12);

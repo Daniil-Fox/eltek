@@ -1,0 +1,147 @@
+﻿.popular-card {
+  max-width: 400px;
+  margin: 0 auto;
+
+  @media (min-width: 1440px) {
+    max-width: 40rem;
+  }
+
+  &__title {
+    margin: 0;
+    margin-bottom: 32px;
+    color: var(--black-brand-color);
+
+    font-size: 32px;
+    font-weight: 700;
+    letter-spacing: 1.6px;
+
+    @media (min-width: 1440px) {
+      font-size: 3.2rem;
+      margin-bottom: 3.2rem;
+      letter-spacing: 0.16rem;
+    }
+  }
+
+  &__desc {
+    margin-bottom: 32px;
+    color: var(--black-brand-color);
+
+    line-height: 160%;
+    letter-spacing: 0.32px;
+    font-size: 16px;
+
+    @media (min-width: 1440px) {
+      font-size: 1.6rem;
+      margin-bottom: 3.2rem;
+      letter-spacing: 0.032rem;
+    }
+
+    @include mobile {
+      margin-bottom: 0;
+      padding: 0 11px;
+    }
+  }
+
+  &__list {
+    margin-bottom: 32px;
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+
+    @media (min-width: 1440px) {
+      gap: 1.6rem;
+    }
+  }
+
+  &__item {
+    position: relative;
+    padding: 9px 0;
+    padding-left: 48px;
+    color: var(--black-brand-color);
+
+    line-height: 160%;
+    letter-spacing: 0.32px;
+    font-size: 16px;
+
+    @media (min-width: 1440px) {
+      background-size: 1.6rem;
+      padding-left: 4.8rem;
+      font-size: 1.6rem;
+      letter-spacing: 0.032rem;
+    }
+
+    span {
+      margin-left: 8px;
+      color: rgba(37, 35, 33, 0.4);
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 36px;
+      height: 36px;
+      background-position: center, center;
+      background-size: contain;
+      background-repeat: no-repeat;
+
+      @media (min-width: 1440px) {
+        width: 3.6rem;
+        height: 3.6rem;
+      }
+    }
+
+    &--sq {
+      &::before {
+        background-image: url("./../img/house-icon/house-icon-1.svg");
+      }
+    }
+
+    &--fl {
+      &::before {
+        background-image: url("./../img/house-icon/house-icon-floors.svg");
+      }
+    }
+
+    &--bed {
+      &::before {
+        background-image: url("./../img/house-icon/house-icon-bedrooms.svg");
+      }
+    }
+
+    &--bath {
+      &::before {
+        background-image: url("./../img/house-icon/house-icon-bathrooms.svg");
+      }
+    }
+
+    &--pl {
+      &::before {
+        background-image: url("./../img/house-icon/house-icon-place.svg");
+      }
+    }
+  }
+
+  &__more {
+    @media (max-width: 374px) {
+      display: block;
+      padding: 16px 0;
+      width: 33%;
+    }
+  }
+
+  &__row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    @media (min-width: 1440px) {
+      gap: 1rem;
+    }
+  }
+}

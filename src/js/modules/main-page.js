@@ -13,6 +13,10 @@ import { initModals } from "./modals.js";
 import { initUi } from "./ui.js";
 import { initCircleProgress } from "./circle-progress.js";
 import { initAboutPage } from "./about-page.js";
+import { initDesignSection } from "./design-section.js";
+import { initContactsMap } from "./contacts-map.js";
+import { initPortfolioFilter } from "./portfolio-filter.js";
+import { initProjectGallery } from "./project-gallery.js";
 
 export function initMainPage() {
   initSliders();
@@ -37,6 +41,10 @@ export function initMainPage() {
 
     initAdvantagesParallax();
     initAboutPage();
+    initDesignSection();
+    initContactsMap();
+    initPortfolioFilter();
+    initProjectGallery();
     ScrollTrigger.refresh();
 
     if (window.__responsibilitySlider) {

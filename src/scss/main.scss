@@ -4,62 +4,36 @@
 @import "fonts";
 @import "settings";
 
-@import "./components/header";
-@import "./components/slider-control";
-@import "./components/address";
-@import "./components/nav";
-@import "./components/dropdown";
-@import "./components/hero";
-@import "./components/modal-video";
-@import "./components/modal-form";
-@import "./components/modal-gallery";
-@import "./components/menu";
-@import "./components/favorites";
-@import "./components/benefit";
-@import "./components/tour";
-@import "./components/popular";
-@import "./components/services-section";
-@import "./components/video";
-@import "./components/projects-section";
-@import "./components/benefits-house";
-@import "./components/house-content";
-@import "./components/eco-house";
-@import "./components/tech";
-@import "./components/add";
-@import "./components/responsibility";
-@import "./components/office";
-@import "./components/form";
-@import "./components/cta";
-@import "./components/engineering-home";
-
+@import "./components/ui";
 @import "./components/breadcrumbs";
-@import "./components/catalogue-section";
-@import "./components/product";
-@import "./components/filters";
-@import "./components/pagination";
-@import "./components/built-houses";
 
+@import "./components/modal";
+@import "./components/modal-form";
+@import "./components/form";
+
+@import "./components/header";
+@import "./components/header-contact";
+@import "./components/nav";
+@import "./components/address";
+@import "./components/menu";
 @import "./components/mobile-menu";
-
 @import "./components/footer";
-@import "./components/chars";
-@import "./components/item-hero";
-@import "./components/item-plan";
-@import "./components/desc-slider";
-@import "./components/desc-info";
-@import "./components/item-desc";
-@import "./components/similar";
-@import "./components/others";
-@import "./components/accordion";
+
+@import "./components/favorite-btn";
+@import "./components/hero";
+@import "./components/benefit";
+@import "./components/benefits-house";
+@import "./components/advantages-reveal";
+@import "./components/services-section";
+@import "./components/projects-section";
+@import "./components/projects-card";
+@import "./components/popular-card";
+@import "./components/slider-control";
 @import "./components/faq";
 
 @import "./components/design-section";
-@import "./components/implemPhoto-section";
-@import "./components/implemTours-section";
-@import "./components/implemVideo-section";
-@import "./components/implemObjects-section";
-@import "./components/implemReady-section";
-@import "./components/contacts";
+@import "./components/cta";
+@import "./components/cta-form";
 @import "./components/contact-fab";
 
 @import "./components/about-hero";
@@ -71,8 +45,17 @@
 @import "./components/about-prod";
 @import "./components/about-mon";
 @import "./components/about-desc";
+@import "./components/built-houses";
 @import "./components/about-portfolio";
-@import "./components/tech-gen";
-@import "./components/timber-main";
 
+@import "./components/services-page";
+@import "./components/service-detail";
+@import "./components/portfolio-page";
+@import "./components/filters";
+
+@import "./components/favorites-page";
+@import "./components/project-detail";
+@import "./components/project-related";
+
+@import "./components/contacts";
 @import "./components/not-found404";

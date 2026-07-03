@@ -1,0 +1,235 @@
+.service-detail {
+  padding-top: 120px;
+  background-color: var(--white-color);
+
+  @media (min-width: 1440px) {
+    padding-top: 12rem;
+  }
+
+  @include mobile {
+    padding-top: 96px;
+  }
+
+  &__breadcrumbs {
+    padding: 0 30px 24px;
+
+    @media (min-width: 1440px) {
+      padding: 0 3rem 2.4rem;
+    }
+
+    @include mobile {
+      padding: 0 16px 20px;
+    }
+  }
+
+  &__headline {
+    max-width: 920px;
+  }
+
+  &__hero img {
+    object-position: center 40%;
+  }
+
+  &__pin {
+    .design-section__left p {
+      color: var(--gray-middle-color);
+      font-size: 18px;
+      line-height: 160%;
+
+      @media (min-width: 1440px) {
+        font-size: 1.8rem;
+      }
+
+      @include mobile {
+        font-size: 16px;
+      }
+    }
+  }
+
+  &__extra {
+    padding: 80px 30px;
+    border-top: 1px solid rgba(27, 32, 38, 0.08);
+
+    @media (min-width: 1440px) {
+      padding: 8rem 3rem;
+    }
+
+    @include mobile {
+      padding: 48px 16px;
+    }
+  }
+
+  &__extra-head {
+    margin-bottom: 40px;
+
+    @media (min-width: 1440px) {
+      margin-bottom: 4rem;
+    }
+
+    @include mobile {
+      margin-bottom: 28px;
+    }
+  }
+
+  &__extra-title {
+    margin: 0;
+    color: var(--black-brand-color);
+    font-size: 32px;
+    font-weight: 500;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+
+    @media (min-width: 1440px) {
+      font-size: 3.2rem;
+      letter-spacing: 0.12rem;
+    }
+
+    @include mobile {
+      font-size: 22px;
+    }
+  }
+
+  &__cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-bottom: 48px;
+
+    @media (min-width: 1440px) {
+      gap: 2rem;
+      margin-bottom: 4.8rem;
+    }
+
+    @media (max-width: 1023px) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__card {
+    padding: 28px 24px;
+    border: 1px solid rgba(27, 32, 38, 0.1);
+    border-radius: 10px;
+    background: var(--surface-light);
+    transition:
+      border-color 0.3s ease,
+      box-shadow 0.3s ease;
+
+    @media (min-width: 1440px) {
+      padding: 2.8rem 2.4rem;
+      border-radius: 1rem;
+    }
+
+    @include hover {
+      border-color: rgba(229, 57, 53, 0.25);
+      box-shadow: 0 12px 32px rgba(27, 32, 38, 0.06);
+    }
+  }
+
+  &__card-num {
+    display: block;
+    margin-bottom: 16px;
+    color: var(--focus-color);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+
+    @media (min-width: 1440px) {
+      margin-bottom: 1.6rem;
+      font-size: 1.3rem;
+    }
+  }
+
+  &__card-title {
+    margin: 0 0 12px;
+    color: var(--black-brand-color);
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 1.3;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+
+    @media (min-width: 1440px) {
+      margin-bottom: 1.2rem;
+      font-size: 1.8rem;
+    }
+  }
+
+  &__card-text {
+    margin: 0;
+    color: var(--gray-middle-color);
+    font-size: 15px;
+    line-height: 160%;
+
+    @media (min-width: 1440px) {
+      font-size: 1.5rem;
+    }
+  }
+
+  &__facts {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    padding-top: 32px;
+    border-top: 1px solid rgba(27, 32, 38, 0.08);
+
+    @media (min-width: 1440px) {
+      gap: 1.6rem;
+      padding-top: 3.2rem;
+    }
+
+    @media (max-width: 768px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  &__fact {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding: 20px 16px;
+    border-radius: 8px;
+    background: var(--white-color);
+    box-shadow: 0 4px 20px rgba(27, 32, 38, 0.05);
+
+    @media (min-width: 1440px) {
+      gap: 0.6rem;
+      padding: 2rem 1.6rem;
+      border-radius: 0.8rem;
+    }
+  }
+
+  &__fact-value {
+    color: var(--black-brand-color);
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: -0.02em;
+
+    @media (min-width: 1440px) {
+      font-size: 2.8rem;
+    }
+
+    @include mobile {
+      font-size: 24px;
+    }
+  }
+
+  &__fact-label {
+    color: var(--gray-middle-color);
+    font-size: 13px;
+    line-height: 140%;
+
+    @media (min-width: 1440px) {
+      font-size: 1.3rem;
+    }
+  }
+
+  &__nav {
+    padding-top: 24px;
+    border-top: 1px solid rgba(27, 32, 38, 0.08);
+
+    @media (min-width: 1440px) {
+      padding-top: 2.4rem;
+    }
+  }
+}

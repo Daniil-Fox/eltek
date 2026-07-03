@@ -1,202 +1,335 @@
-.contacts {
-  padding: 120px 0 160px;
+.contacts-page {
+  padding: 120px 0 80px;
+  background-color: var(--white-color);
 
-  @include mobile {
-    padding: 30px 0 120px;
+  @media (min-width: 1440px) {
+    padding: 12rem 0 8rem;
   }
 
-  &__container {
+  @include mobile {
+    padding: 96px 0 48px;
+  }
+
+  &__breadcrumbs {
+    padding: 0 30px 32px;
+
+    @media (min-width: 1440px) {
+      padding: 0 3rem 3.2rem;
+    }
+
+    @include mobile {
+      padding: 0 16px 24px;
+    }
+  }
+
+  &__intro {
+    margin-bottom: 16px;
+    padding: 0 30px 56px;
     text-align: center;
-    padding: 0 16px;
 
-    @media (min-width: 1441px) {
-      padding: 0 1.6rem;
+    @media (min-width: 1440px) {
+      margin-bottom: 1.6rem;
+      padding: 0 3rem 5.6rem;
     }
 
-    h3 {
-      margin: 0;
-      color: var(--focus-color);
-
-      font-size: 18px;
-      letter-spacing: 5.4px;
-      text-transform: uppercase;
-      font-weight: 400;
-
-      @media (min-width: 1441px) {
-        font-size: 1.8rem;
-        letter-spacing: 0.54rem;
-      }
-
-      @include mobile {
-        font-size: 14px;
-        letter-spacing: 4.2px;
-      }
-    }
-
-    h1 {
-      margin: 0;
-      margin-bottom: 80px;
-      position: relative;
-      color: var(--black-brand-color);
-      font-size: 48px;
-      font-weight: 500;
-      letter-spacing: 2.4px;
-      line-height: normal;
-
-      @media (min-width: 1441px) {
-        font-size: 4.8rem;
-        letter-spacing: 0.24rem;
-        margin-bottom: 8rem;
-      }
-
-      @include mobile {
-        font-size: 24px;
-        letter-spacing: 0.48px;
-      }
+    @include mobile {
+      padding: 0 16px 40px;
     }
   }
 
-  .office__slider {
-    cursor: grab;
+  &__title {
+    margin: 0 0 20px;
+
+    @media (min-width: 1440px) {
+      margin-bottom: 2rem;
+    }
   }
 
-  .office__btn {
-    margin-bottom: 0;
-  }
+  &__lead {
+    margin: 0 auto;
+    max-width: 640px;
+    color: var(--gray-middle-color);
+    font-size: 18px;
+    line-height: 168%;
+    letter-spacing: 0.18px;
 
-  .address {
-    a,
-    span {
-      position: relative;
-      display: inline-block;
-      font-family: inherit;
-      padding: 12px 0;
-      padding-left: 36px;
-      color: var(--black-brand-color);
+    @media (min-width: 1440px) {
+      max-width: 64rem;
+      font-size: 1.8rem;
+      letter-spacing: 0.018rem;
+    }
+
+    @include mobile {
       font-size: 16px;
-      font-weight: 400;
-      line-height: 160%;
-
-      font-style: normal;
-      letter-spacing: 0.32px;
-
-      @media (min-width: 1440px) {
-        padding-left: 3.6rem;
-        font-size: 1.6rem;
-        letter-spacing: 0.032rem;
-      }
-
-      &:not(span) {
-        @include hover {
-          text-decoration: underline;
-        }
-      }
-
-      img {
-        position: absolute;
-        left: 0;
-        top: 50%;
-        transform: translateY(-50%);
-        width: 24px;
-        height: 24px;
-      }
-    }
-  }
-}
-
-.map-data {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  min-height: 525px;
-  padding: 80px 0;
-
-  @media (min-width: 1441px) {
-    min-height: 52.5rem;
-    padding: 8rem 0;
-  }
-
-  @include mobile {
-    grid-template-columns: 1fr;
-    padding: 80px 0 60px;
-  }
-
-  &__info {
-    max-width: 500px;
-
-    @media (min-width: 1441px) {
-      max-width: 50rem;
     }
   }
 
-  &__left {
+  &__cards {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+    margin-bottom: 80px;
+    padding: 0 30px;
+
+    @media (min-width: 1440px) {
+      gap: 2.4rem;
+      margin-bottom: 8rem;
+      padding: 0 3rem;
+    }
+
+    @include mobile {
+      grid-template-columns: 1fr;
+      gap: 16px;
+      margin-bottom: 48px;
+      padding: 0 16px;
+    }
+  }
+
+  &__card {
+    padding: 32px 28px;
+    border: 1px solid rgba(27, 32, 38, 0.1);
+    border-radius: 8px;
+    background-color: var(--surface-light);
+
+    @media (min-width: 1440px) {
+      padding: 3.2rem 2.8rem;
+      border-radius: 0.8rem;
+    }
+
+    @include mobile {
+      padding: 24px 20px;
+    }
+  }
+
+  &__card-body {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 0 16px;
+    align-items: flex-start;
+    gap: 8px;
 
-    @media (min-width: 1441px) {
-      padding: 0 1.6rem;
+    @media (min-width: 1440px) {
+      gap: 0.8rem;
+    }
+  }
+
+  &__link {
+    color: var(--black-brand-color);
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 140%;
+    letter-spacing: 0.18px;
+    transition: color 0.3s ease;
+
+    @media (min-width: 1440px) {
+      font-size: 1.8rem;
+      letter-spacing: 0.018rem;
     }
 
-    @include mobile {
-      margin-bottom: 60px;
+    @include hover {
+      color: var(--focus-color);
     }
 
-    h3 {
-      margin: 0;
-      text-align: center;
-      margin-bottom: 24px;
-      color: var(--black-brand-color);
-      font-size: 48px;
-      font-style: normal;
+    &--primary {
+      font-size: 24px;
       font-weight: 500;
-      line-height: normal;
-      letter-spacing: 2.4px;
 
-      @media (min-width: 1441px) {
-        margin-bottom: 2.4rem;
-        font-size: 4.8rem;
-        letter-spacing: 0.24rem;
+      @media (min-width: 1440px) {
+        font-size: 2.4rem;
       }
 
       @include mobile {
-        font-size: 24px;
-        letter-spacing: 0.48px;
-      }
-    }
-
-    ul {
-      margin: 0;
-      list-style: square;
-
-      & > li {
-        color: var(--black-brand-color);
-        font-size: 16px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: 160%;
-        letter-spacing: 0.32px;
-
-        @media (min-width: 1441px) {
-          font-size: 1.6rem;
-          letter-spacing: 0.032rem;
-        }
+        font-size: 20px;
       }
     }
   }
 
-  &__right {
-    max-width: 100%;
-    overflow: hidden;
+  &__text {
+    margin: 0;
+    color: var(--black-brand-color);
+    font-size: 18px;
+    line-height: 150%;
+    letter-spacing: 0.18px;
+
+    @media (min-width: 1440px) {
+      font-size: 1.8rem;
+      letter-spacing: 0.018rem;
+    }
+
+    &--muted {
+      color: var(--gray-middle-color);
+      font-size: 16px;
+
+      @media (min-width: 1440px) {
+        font-size: 1.6rem;
+      }
+    }
+  }
+
+  &__messengers {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 12px;
+
+    @media (min-width: 1440px) {
+      gap: 1.2rem;
+    }
+  }
+
+  &__messenger {
+    display: inline-flex;
+    align-items: center;
+    padding: 10px 18px;
+    border: 1px solid var(--focus-color);
+    border-radius: 4px;
+    color: var(--black-brand-color);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    transition:
+      background-color 0.3s ease,
+      color 0.3s ease;
+
+    @media (min-width: 1440px) {
+      padding: 1rem 1.8rem;
+      font-size: 1.2rem;
+      letter-spacing: 0.12rem;
+      border-radius: 0.4rem;
+    }
+
+    @include hover {
+      background-color: var(--focus-color);
+      color: var(--white-color);
+    }
+  }
+
+  &__map-block {
+    display: grid;
+    grid-template-columns: minmax(280px, 0.9fr) minmax(0, 1.1fr);
+    gap: 48px;
+    align-items: stretch;
+    padding: 0 30px;
+
+    @media (min-width: 1440px) {
+      gap: 4.8rem;
+      padding: 0 3rem;
+    }
+
+    @include tablet {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
 
     @include mobile {
-      height: 39.5vh;
+      padding: 0 16px;
+      gap: 32px;
+    }
+  }
+
+  &__map-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 8px 0;
+
+    @include tablet {
+      order: 2;
+    }
+  }
+
+  &__map-title {
+    @include ui-section-title;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+
+    @media (min-width: 1440px) {
+      margin-bottom: 2rem;
+    }
+  }
+
+  &__map-address {
+    margin: 0 0 32px;
+    color: var(--black-brand-color);
+    font-size: 18px;
+    line-height: 160%;
+    letter-spacing: 0.18px;
+
+    @media (min-width: 1440px) {
+      margin-bottom: 3.2rem;
+      font-size: 1.8rem;
+      letter-spacing: 0.018rem;
+    }
+  }
+
+  &__routes {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    margin-bottom: 40px;
+
+    @media (min-width: 1440px) {
+      gap: 2.4rem;
+      margin-bottom: 4rem;
+    }
+  }
+
+  &__route-label {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--focus-color);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2.4px;
+    text-transform: uppercase;
+
+    @media (min-width: 1440px) {
+      margin-bottom: 0.8rem;
+      font-size: 1.2rem;
+      letter-spacing: 0.24rem;
+    }
+  }
+
+  &__route p {
+    margin: 0;
+    color: var(--gray-middle-color);
+    font-size: 16px;
+    line-height: 160%;
+    letter-spacing: 0.32px;
+
+    @media (min-width: 1440px) {
+      font-size: 1.6rem;
+      letter-spacing: 0.032rem;
+    }
+  }
+
+  &__form-btn {
+    align-self: flex-start;
+  }
+
+  &__map-wrap {
+    min-height: 420px;
+    overflow: hidden;
+    border-radius: 8px;
+    background-color: var(--surface-light);
+
+    @media (min-width: 1440px) {
+      min-height: 42rem;
+      border-radius: 0.8rem;
     }
 
-    & > div {
-      width: 100%;
-      height: 100%;
+    @include tablet {
+      order: 1;
+      min-height: 360px;
     }
+
+    @include mobile {
+      min-height: 280px;
+    }
+  }
+
+  &__map {
+    width: 100%;
+    height: 100%;
+    min-height: inherit;
   }
 }

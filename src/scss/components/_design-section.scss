@@ -90,26 +90,12 @@
     }
 
     h2 {
-      margin: 0;
+      @include ui-section-title;
       margin-bottom: 24px;
-      color: var(--black-brand-color);
-      font-size: 48px;
-      font-style: normal;
-      font-weight: 500;
-      line-height: normal;
-      letter-spacing: 2.4px;
       text-transform: uppercase;
 
       @media (min-width: 1441px) {
         margin-bottom: 2.4rem;
-        font-size: 4.8rem;
-        letter-spacing: 0.24rem;
-      }
-
-      @include mobile {
-        font-size: 24px;
-        letter-spacing: 0.48px;
-
       }
     }
 
@@ -164,6 +150,8 @@
       }
 
       li {
+        will-change: transform, opacity;
+
         &:not(:last-child) {
           margin-bottom: 60px;
 

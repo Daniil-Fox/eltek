@@ -201,6 +201,15 @@
       background-color: var(--focus-color);
       color: var(--white-color);
     }
+
+    &--icon {
+      gap: 8px;
+
+      img {
+        flex-shrink: 0;
+        display: block;
+      }
+    }
   }
 
   &__map-block {

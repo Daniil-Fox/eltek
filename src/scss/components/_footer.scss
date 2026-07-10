@@ -30,6 +30,17 @@
     }
   }
 
+  &__phones {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 6px;
+
+    @media (min-width: 1440px) {
+      gap: 0.6rem;
+    }
+  }
+
   &__phone {
     color: var(--black-brand-color);
     font-size: 12px;

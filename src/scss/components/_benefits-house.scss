@@ -1,13 +1,10 @@
 ﻿.benefits-house {
   position: relative;
-  padding-top: 37px;
+  padding-top: 0;
   padding-bottom: 0;
   align-items: flex-start;
   overflow: hidden;
   @include feather-bottom(rgba(27, 32, 38, 0.55), transparent);
-  @media (min-width: 1440px) {
-    padding-top: 3.7rem;
-  }
 
   &__wrapper {
     position: relative;
@@ -16,18 +13,19 @@
 
   &__title {
     position: relative;
-    z-index: 3;
+    z-index: 5;
     width: 100%;
-    margin: 0 auto 48px;
+    margin: 0 auto 32px;
     padding: 0 30px;
+    color: var(--white-color);
 
     @media (min-width: 1440px) {
-      margin-bottom: 4.8rem;
+      margin-bottom: 3.2rem;
       padding: 0 3rem;
     }
 
     @include mobile {
-      margin-bottom: 32px;
+      margin-bottom: 24px;
       padding: 0 16px;
     }
   }

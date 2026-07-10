@@ -3620,6 +3620,24 @@ html.lenis {
     padding: 1.6rem 0;
   }
 }
+.footer__phones {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: end;
+  -ms-flex-align: end;
+  align-items: flex-end;
+  gap: 6px;
+}
+@media (min-width: 1440px) {
+  .footer__phones {
+    gap: 0.6rem;
+  }
+}
 .footer__phone {
   color: var(--black-brand-color);
   font-size: 12px;
@@ -4578,7 +4596,7 @@ html.lenis {
 
 .benefits-house {
   position: relative;
-  padding-top: 37px;
+  padding-top: 0;
   padding-bottom: 0;
   -webkit-box-align: start;
   -ms-flex-align: start;
@@ -4597,31 +4615,27 @@ html.lenis {
   background: -webkit-gradient(linear, left bottom, left top, from(rgba(27, 32, 38, 0.55)), to(transparent));
   background: linear-gradient(to top, rgba(27, 32, 38, 0.55), transparent);
 }
-@media (min-width: 1440px) {
-  .benefits-house {
-    padding-top: 3.7rem;
-  }
-}
 .benefits-house__wrapper {
   position: relative;
   overflow: visible;
 }
 .benefits-house__title {
   position: relative;
-  z-index: 3;
+  z-index: 5;
   width: 100%;
-  margin: 0 auto 48px;
+  margin: 0 auto 32px;
   padding: 0 30px;
+  color: var(--white-color);
 }
 @media (min-width: 1440px) {
   .benefits-house__title {
-    margin-bottom: 4.8rem;
+    margin-bottom: 3.2rem;
     padding: 0 3rem;
   }
 }
 @media (max-width: 850px) {
   .benefits-house__title {
-    margin-bottom: 32px;
+    margin-bottom: 24px;
     padding: 0 16px;
   }
 }
@@ -10851,6 +10865,14 @@ html.lenis {
     background-color: var(--focus-color);
     color: var(--white-color);
   }
+}
+.contacts-page__messenger--icon {
+  gap: 8px;
+}
+.contacts-page__messenger--icon img {
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  display: block;
 }
 .contacts-page__map-block {
   display: -ms-grid;

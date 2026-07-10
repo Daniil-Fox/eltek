@@ -1,7 +1,7 @@
 .benefit {
   position: relative;
   overflow: hidden;
-  padding: 160px 0 180px;
+  padding: 160px 0 0px;
   background-color: var(--surface-light);
   @include feather-top(#fff, transparent);
   @include feather-bottom(#fff, transparent);
@@ -12,7 +12,7 @@
 
   @media (min-width: 1440px) {
     padding-top: 16rem;
-    padding-bottom: 18rem;
+    padding-bottom: 0rem;
   }
 
   &__container {

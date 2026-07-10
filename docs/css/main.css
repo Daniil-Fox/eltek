@@ -4318,7 +4318,7 @@ html.lenis {
 .benefit {
   position: relative;
   overflow: hidden;
-  padding: 160px 0 180px;
+  padding: 160px 0 0px;
   background-color: var(--surface-light);
 }
 .benefit::before {
@@ -4353,7 +4353,7 @@ html.lenis {
 @media (min-width: 1440px) {
   .benefit {
     padding-top: 16rem;
-    padding-bottom: 18rem;
+    padding-bottom: 0rem;
   }
 }
 .benefit__container {

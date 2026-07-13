@@ -1,4 +1,5 @@
 .about-prod {
+  overflow: hidden;
   padding-top: 120px;
   padding-bottom: 120px;
 
@@ -26,115 +27,100 @@
   }
 
   &__header {
-    max-width: 600px;
     margin: 0 auto;
-
-    @media (min-width: 1441px) {
-      max-width: 60rem;
-    }
-
-    & > h2 {
-      margin: 0;
-      margin-bottom: 32px;
-      color: var(--black-brand-color);
-      text-align: center;
-      font-size: 48px;
-      font-style: normal;
-      font-weight: 500;
-      line-height: normal;
-      letter-spacing: 2.4px;
-
-      @media (min-width: 1441px) {
-        margin-bottom: 3.2rem;
-        font-size: 4.8rem;
-        letter-spacing: 0.24rem;
-      }
-
-      @include mobile {
-        font-size: 24px;
-        letter-spacing: 0.48px;
-      }
-    }
-
-    & > p {
-      margin: 0;
-      margin-bottom: 60px;
-      color: var(--black-brand-color);
-      text-align: center;
-      font-size: 16px;
-      font-style: normal;
-      font-weight: 400;
-      line-height: 160%;
-      letter-spacing: 0.32px;
-
-      @media (min-width: 1441px) {
-        margin-bottom: 6rem;
-        font-size: 1.6rem;
-        letter-spacing: 0.032rem;
-      }
-
-      @include mobile {
-        margin-bottom: 32px;
-      }
-    }
   }
 
   &__slider-control {
     display: flex;
     justify-content: center;
+    gap: 16px;
   }
 
   &__slider {
-    padding: 100px 0;
-    margin-bottom: 60px;
+    position: relative;
+    overflow: visible;
+    padding: 24px 0 40px;
+    margin-bottom: 32px;
 
     @media (min-width: 1441px) {
-      padding: 10rem 0;
+      padding: 3.2rem 0 4.8rem;
+      margin-bottom: 3.2rem;
     }
 
     @include mobile {
-      padding: 35px 0;
-      margin-bottom: 24px;
+      padding: 16px 0 28px;
+      margin-bottom: 20px;
     }
 
-    .swiper-slide {
-      transition: 0.5s;
-      position: relative;
-      aspect-ratio: 4 / 3;
-
-      @include mobile {
-        height: 40vw;
-      }
-
-      img {
-        @include mobile {
-          position: absolute;
-          left: 0;
-          top: 0;
-          height: 100%;
-        }
-      }
-
-      &::before {
-        content: "";
-        position: absolute;
-        inset: 0;
-        background: rgba(37, 35, 33, 0.6);
-        transition: opacity 0.3s ease-in;
-      }
+    .swiper-wrapper {
+      align-items: center;
     }
 
-    .swiper-slide-active {
-      transform: scale(1.7);
-      z-index: 5;
+    .about-prod__slide {
+      width: clamp(260px, 78vw, 320px);
+      height: auto;
 
-      @include mobile {
-        transform: scale(2, 1.4);
+      @media (min-width: 768px) {
+        width: clamp(360px, 44vw, 460px);
       }
 
-      &::before {
-        opacity: 0;
+      @media (min-width: 1200px) {
+        width: clamp(440px, 34vw, 540px);
       }
+    }
+  }
+
+  &__figure {
+    position: relative;
+    margin: 0;
+    overflow: hidden;
+    border-radius: 12px;
+    aspect-ratio: 3 / 2;
+    background-color: var(--dark-bg-color);
+    box-shadow: 0 14px 36px rgba(19, 25, 29, 0.14);
+    transition:
+      box-shadow 0.45s ease,
+      transform 0.45s ease;
+
+    picture,
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+
+    picture {
+      height: 100%;
+    }
+
+    img {
+      object-fit: cover;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(19, 25, 29, 0.45);
+      transition: opacity 0.45s ease;
+      pointer-events: none;
+    }
+  }
+
+  &__slider .swiper-slide-active .about-prod__figure {
+    box-shadow: 0 28px 56px rgba(19, 25, 29, 0.24);
+
+    &::after {
+      opacity: 0;
+    }
+  }
+
+  &__slider .swiper-slide-prev .about-prod__figure,
+  &__slider .swiper-slide-next .about-prod__figure {
+    box-shadow: 0 10px 28px rgba(19, 25, 29, 0.12);
+
+    &::after {
+      opacity: 0.65;
     }
   }
 }

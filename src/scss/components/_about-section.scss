@@ -1,0 +1,73 @@
+.about-head {
+  max-width: 720px;
+  margin: 0 auto;
+  text-align: center;
+
+  @media (min-width: 1441px) {
+    max-width: 72rem;
+  }
+
+  &--sm {
+    max-width: 600px;
+
+    @media (min-width: 1441px) {
+      max-width: 60rem;
+    }
+  }
+
+  &--left {
+    max-width: none;
+    margin: 0;
+    text-align: left;
+  }
+
+  &--spacing-lg {
+    .about-lead {
+      margin-bottom: 60px;
+
+      @media (min-width: 1441px) {
+        margin-bottom: 6rem;
+      }
+
+      @include mobile {
+        margin-bottom: 32px;
+      }
+    }
+  }
+
+  .eyebrow {
+    margin-bottom: 12px;
+
+    @media (min-width: 1440px) {
+      margin-bottom: 1.2rem;
+    }
+  }
+
+  .title {
+    margin-bottom: 20px;
+
+    @media (min-width: 1440px) {
+      margin-bottom: 2rem;
+    }
+
+    @include mobile {
+      margin-bottom: 16px;
+    }
+  }
+}
+
+.about-lead {
+  @include about-lead;
+
+  & + & {
+    margin-top: 24px;
+
+    @media (min-width: 1440px) {
+      margin-top: 2.4rem;
+    }
+  }
+}
+
+.about-card-title {
+  @include about-card-title;
+}

@@ -24,6 +24,17 @@
 
   &__headline {
     max-width: 920px;
+    padding: 30px;
+
+    @media (min-width: 1441px) {
+      padding: 3rem;
+      max-width: 100rem;
+    }
+
+    @include mobile {
+      padding: 16px;
+      padding-bottom: 32px;
+    }
   }
 
   &__hero img {
@@ -31,17 +42,11 @@
   }
 
   &__pin {
-    .design-section__left p {
-      color: var(--gray-middle-color);
-      font-size: 18px;
-      line-height: 160%;
+    .design-section__left .about-head .title {
+      margin-bottom: 24px;
 
-      @media (min-width: 1440px) {
-        font-size: 1.8rem;
-      }
-
-      @include mobile {
-        font-size: 16px;
+      @media (min-width: 1441px) {
+        margin-bottom: 2.4rem;
       }
     }
   }
@@ -68,24 +73,6 @@
 
     @include mobile {
       margin-bottom: 28px;
-    }
-  }
-
-  &__extra-title {
-    margin: 0;
-    color: var(--black-brand-color);
-    font-size: 32px;
-    font-weight: 500;
-    letter-spacing: 1.2px;
-    text-transform: uppercase;
-
-    @media (min-width: 1440px) {
-      font-size: 3.2rem;
-      letter-spacing: 0.12rem;
-    }
-
-    @include mobile {
-      font-size: 22px;
     }
   }
 

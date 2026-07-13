@@ -229,14 +229,20 @@ a {
 
     &:focus {
       background-color: var(--focus-active-color);
+      border-color: var(--focus-active-color);
+      color: var(--white-color);
     }
 
     @include hover {
       background-color: var(--focus-active-color);
+      border-color: var(--focus-active-color);
+      color: var(--white-color);
     }
 
     &:active {
       background-color: var(--focus-active-color);
+      border-color: var(--focus-active-color);
+      color: var(--white-color);
     }
   }
 
@@ -586,17 +592,18 @@ a {
   position: relative;
   margin: 0;
   color: var(--black-brand-color);
+  font-family: var(--font-brand);
   font-size: 48px;
   font-weight: 400;
   line-height: normal;
-
+  letter-spacing: 1.4px;
   &--white {
     color: var(--white-color);
   }
 
   @media (min-width: 1440px) {
     font-size: 4.8rem;
-    letter-spacing: 0.24rem;
+    letter-spacing: 0.14rem;
   }
 
   @include mobile {

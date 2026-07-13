@@ -17,25 +17,7 @@
       @include('partials/cta.html')
       <button class="up-page-btn btn-reset"></button>
       @include('partials/modal-form.html')
-      <div class="mobile-menu">
-        <ul class="mobile-menu__list list-reset">
-          <li class="mobile-menu__item">
-            <button class="mobile-menu__btn mobile-menu__btn--call btn-reset" data-form-id="call-btn-main-mob"></button>
-          </li>
-          <li class="mobile-menu__item">
-            <a href="https://api.whatsapp.com/send?phone=78006007008"
-              class="mobile-menu__btn mobile-menu__btn--whatsapp btn-reset">
-            </a>
-          </li>
-          <li class="mobile-menu__item">
-            <a href="tg://resolve?domain=username" class="mobile-menu__btn mobile-menu__btn--telegram btn-reset">
-            </a>
-          </li>
-          <li class="mobile-menu__item">
-            <button class="mobile-menu__btn mobile-menu__btn--search btn-reset"></button>
-          </li>
-        </ul>
-      </div>
+      @include('partials/mobile-menu.html')
     </main>
     @include('partials/footer.html')
     <div class="plug"></div>

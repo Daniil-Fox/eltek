@@ -24,7 +24,6 @@
     position: relative;
     z-index: 2;
     margin-bottom: 56px;
-    text-align: center;
 
     @media (min-width: 1440px) {
       margin-bottom: 5.6rem;
@@ -35,30 +34,12 @@
     }
   }
 
-  &__title {
-    margin: 0 auto 20px;
-    max-width: 720px;
-
-    @media (min-width: 1440px) {
-      margin-bottom: 2rem;
-      max-width: 72rem;
-    }
-  }
-
   &__lead {
-    margin: 0 auto;
     max-width: 560px;
-    color: var(--gray-middle-color);
-    font-size: 17px;
-    line-height: 160%;
+    margin: 0 auto 40px !important;
 
     @media (min-width: 1440px) {
       max-width: 56rem;
-      font-size: 1.7rem;
-    }
-
-    @include mobile {
-      font-size: 15px;
     }
   }
 
@@ -267,6 +248,7 @@
       scroll-padding-inline: 16px;
       scrollbar-width: none;
       -webkit-overflow-scrolling: touch;
+      touch-action: pan-x;
 
       &::-webkit-scrollbar {
         display: none;
@@ -325,6 +307,7 @@
       border-radius: 10px;
       background: var(--white-color);
       box-shadow: 0 8px 24px rgba(27, 32, 38, 0.06);
+      cursor: pointer;
 
       .services-section__num {
         color: var(--focus-color);

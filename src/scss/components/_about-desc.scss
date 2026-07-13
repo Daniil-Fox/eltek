@@ -1,68 +1,13 @@
 .about-desc {
   &__header {
-    max-width: 720px;
-    margin: 0 auto;
     padding: 60px 0;
-    text-align: center;
 
     @media (min-width: 1441px) {
-      max-width: 72rem;
       padding: 6rem 0;
     }
 
     @include mobile {
       padding: 64px 16px 32px;
-    }
-
-    h2 {
-      margin: 0;
-      margin-bottom: 16px;
-      color: var(--black-brand-color);
-      font-size: 48px;
-      font-weight: 500;
-      line-height: normal;
-      letter-spacing: 2.4px;
-
-      @media (min-width: 1441px) {
-        margin-bottom: 1.6rem;
-        font-size: 4.8rem;
-        letter-spacing: 0.24rem;
-      }
-
-      @include mobile {
-        font-size: 24px;
-        letter-spacing: 0.48px;
-      }
-    }
-
-    & > p {
-      margin: 0;
-      color: var(--black-brand-color);
-      font-size: 16px;
-      font-weight: 400;
-      line-height: 160%;
-      letter-spacing: 0.32px;
-
-      @media (min-width: 1441px) {
-        font-size: 1.6rem;
-        letter-spacing: 0.032rem;
-      }
-    }
-  }
-
-  &__eyebrow {
-    margin: 0 0 12px;
-    color: var(--focus-active-color);
-    font-size: 14px;
-    font-weight: 400;
-    line-height: normal;
-    letter-spacing: 4.2px;
-    text-transform: uppercase;
-
-    @media (min-width: 1441px) {
-      margin-bottom: 1.2rem;
-      font-size: 1.4rem;
-      letter-spacing: 0.42rem;
     }
   }
 
@@ -134,39 +79,8 @@
         }
       }
 
-      h3 {
-        margin: 0;
-        margin-bottom: 16px;
-        color: var(--black-brand-color);
-        font-size: 32px;
-        font-weight: 700;
-        line-height: normal;
-        letter-spacing: 1.6px;
-
-        @media (min-width: 1441px) {
-          margin-bottom: 1.6rem;
-          font-size: 3.2rem;
-          letter-spacing: 0.16rem;
-        }
-
-        @include mobile {
-          font-size: 20px;
-          letter-spacing: 0.2px;
-        }
-      }
-
       p {
-        margin: 0;
-        color: var(--black-brand-color);
-        font-size: 16px;
-        font-weight: 400;
-        line-height: 160%;
-        letter-spacing: 0.32px;
-
-        @media (min-width: 1441px) {
-          font-size: 1.6rem;
-          letter-spacing: 0.032rem;
-        }
+        @include about-lead;
       }
     }
   }

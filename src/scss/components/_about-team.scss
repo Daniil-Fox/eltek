@@ -1,0 +1,106 @@
+.about-team {
+  padding: 120px 0;
+  background-color: var(--white-color);
+
+  @include mobile {
+    padding: 80px 0;
+  }
+
+  @media (min-width: 1440px) {
+    padding: 12rem 0;
+  }
+
+  &__container {
+    max-width: 1170px;
+    margin: 0 auto;
+    padding: 0 var(--container-offset);
+  }
+
+  &__head {
+    margin: 0 auto 56px;
+
+    @include mobile {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+
+    @include mobile {
+      grid-template-columns: 1fr;
+      gap: 20px;
+      max-width: 360px;
+      margin: 0 auto;
+    }
+  }
+
+  &__card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 12px;
+    background: var(--surface-soft);
+    box-shadow: 0 12px 32px rgba(27, 32, 38, 0.06);
+    transition:
+      transform 0.3s ease,
+      box-shadow 0.3s ease;
+
+    @include hover {
+      transform: translateY(-4px);
+      box-shadow: 0 18px 40px rgba(27, 32, 38, 0.1);
+    }
+  }
+
+  &__photo {
+    aspect-ratio: 4 / 5;
+    overflow: hidden;
+
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      filter: grayscale(20%);
+      transition:
+        filter 0.35s ease,
+        transform 0.35s ease;
+    }
+
+    .about-team__card:hover & img {
+      filter: grayscale(0%);
+      transform: scale(1.03);
+    }
+  }
+
+  &__info {
+    padding: 24px 20px 28px;
+    text-align: center;
+
+    @include mobile {
+      padding: 20px 16px 24px;
+    }
+  }
+
+  &__name {
+    margin: 0 0 6px;
+    font-family: var(--font-brand);
+    font-size: 24px;
+    font-weight: 400;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  &__role {
+    margin: 0;
+    color: var(--focus-color);
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+}

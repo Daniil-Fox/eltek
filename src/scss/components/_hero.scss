@@ -7,7 +7,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
-
+  @include mobile {
+    min-height: calc(100dvh - var(--mobile-menu-height));
+  }
   &__slider {
     position: absolute;
     inset: 0;
@@ -19,12 +21,8 @@
     position: absolute;
     inset: 0;
     z-index: 1;
-    background: linear-gradient(
-      180deg,
-      rgba(27, 32, 36, 0.75) 0%,
-      rgba(27, 32, 36, 0.55) 50%,
-      rgba(27, 32, 36, 0.85) 100%
-    );
+    background: #13191d;
+    opacity: 0.6;
   }
 
   &__content {
@@ -67,6 +65,7 @@
       object-fit: cover;
       transform: scale(1.06);
       will-change: transform;
+      filter: grayscale(100%);
     }
 
     &--ken img {
@@ -78,14 +77,38 @@
     animation: heroKenBurns 16s ease-in-out alternate infinite;
   }
 
+  &__brand {
+    margin: 0 0 24px;
+    color: var(--text-on-dark);
+    font-family: var(--font-brand);
+    font-size: clamp(64px, 12vw, 115px);
+    font-weight: 400;
+    line-height: 1;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+
+    @media (min-width: 1440px) {
+      margin-bottom: 2.4rem;
+    }
+
+    @include mobile {
+      margin-bottom: 32px;
+      font-size: clamp(48px, 14vw, 72px);
+    }
+  }
+
+  &__brand-accent {
+    color: var(--focus-color);
+  }
+
   &__title {
     margin: 0 0 24px;
     color: var(--text-on-dark);
-    font-size: 48px;
+    font-size: 60px;
     letter-spacing: 2.4px;
-
+    text-transform: uppercase;
     @media (min-width: 1440px) {
-      font-size: 4.8rem;
+      font-size: 6rem;
       margin-bottom: 2.4rem;
     }
 

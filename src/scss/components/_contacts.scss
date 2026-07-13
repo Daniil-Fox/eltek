@@ -25,7 +25,6 @@
   &__intro {
     margin-bottom: 16px;
     padding: 0 30px 56px;
-    text-align: center;
 
     @media (min-width: 1440px) {
       margin-bottom: 1.6rem;
@@ -34,33 +33,6 @@
 
     @include mobile {
       padding: 0 16px 40px;
-    }
-  }
-
-  &__title {
-    margin: 0 0 20px;
-
-    @media (min-width: 1440px) {
-      margin-bottom: 2rem;
-    }
-  }
-
-  &__lead {
-    margin: 0 auto;
-    max-width: 640px;
-    color: var(--gray-middle-color);
-    font-size: 18px;
-    line-height: 168%;
-    letter-spacing: 0.18px;
-
-    @media (min-width: 1440px) {
-      max-width: 64rem;
-      font-size: 1.8rem;
-      letter-spacing: 0.018rem;
-    }
-
-    @include mobile {
-      font-size: 16px;
     }
   }
 
@@ -244,15 +216,13 @@
     @include tablet {
       order: 2;
     }
-  }
 
-  &__map-title {
-    @include ui-section-title;
-    margin-bottom: 20px;
-    text-transform: uppercase;
+    .about-card-title {
+      margin-bottom: 20px;
 
-    @media (min-width: 1440px) {
-      margin-bottom: 2rem;
+      @media (min-width: 1440px) {
+        margin-bottom: 2rem;
+      }
     }
   }
 

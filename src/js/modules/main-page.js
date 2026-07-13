@@ -6,6 +6,7 @@ import { initProjectCards } from "./projects.js";
 import { initFaqAccordion } from "./faq.js";
 import { initResponsibilityScroll } from "./responsibility.js";
 import { initConsultButtons, initFormLabels } from "./forms.js";
+import { initServiceOrderButtons } from "./service-order.js";
 import { initSliders } from "./sliders.js";
 import { initAdvantagesParallax } from "./advantages-parallax.js";
 import { initServicesSection } from "./services-section.js";
@@ -26,6 +27,7 @@ export function initMainPage() {
   initFaqAccordion();
   initConsultButtons();
   initFormLabels();
+  initServiceOrderButtons();
   initModals();
   initUi();
   initCircleProgress();

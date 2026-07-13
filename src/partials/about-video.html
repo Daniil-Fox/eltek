@@ -1,21 +1,25 @@
 <section class="about-video">
   <div class="about-video__container main-container">
-    <div class="about-video__video">
-      <div class="about-video__wrapper">
-        <picture>
-          <source srcset="./img/schit.webp" type="image/webp" />
-          <img src="./img/schit.png" class="about-video__cover" alt="Сборка и монтаж электрощитового оборудования" loading="lazy" />
-        </picture>
-      </div>
-    </div>
-    <div class="about-video__content">
-      <h4 data-aos="custom-fade-up">Партнёрство и материалы</h4>
-      <h3 data-aos="custom-fade-up">Сертифицированные специалисты и&nbsp;проверенные поставщики</h3>
-      <p data-aos="custom-fade-up">
+    <div class="about-video__content about-head">
+      <p class="eyebrow eyebrow--about" data-aos="custom-fade-up">Партнёрство и материалы</p>
+      <h2 class="title" data-aos="custom-fade-up">Сертифицированные специалисты и&nbsp;проверенные поставщики</h2>
+      <p class="about-lead" data-aos="custom-fade-up">
         Благодаря сотрудничеству с&nbsp;«Электро Маркет» предлагаем материалы со&nbsp;скидкой до&nbsp;20%
         и&nbsp;гарантируем их&nbsp;подлинность. Команда проходит обучение и&nbsp;сертификацию
         у&nbsp;ведущих брендов отрасли.
       </p>
+    </div>
+
+    <div class="about-video__media" data-aos="custom-fade-up" data-aos-delay="100">
+      <picture>
+        <source srcset="./img/team/team-hor.webp" type="image/webp" />
+        <img
+          src="./img/team/team-hor.png"
+          class="about-video__cover"
+          alt="Команда Эльтек на объекте"
+          loading="lazy"
+        />
+      </picture>
     </div>
   </div>
   @include('partners-marquee.html')

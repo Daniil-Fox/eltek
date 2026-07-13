@@ -8,8 +8,13 @@
   z-index: 1;
   width: 100vw;
   height: 100vh;
+  height: 100dvh;
   margin-left: calc(50% - 50vw);
   pointer-events: none;
+
+  @include mobile {
+    margin-top: 0;
+  }
 
   &__frame {
     position: relative;
@@ -36,12 +41,13 @@
     will-change: clip-path;
 
     @include mobile {
-      clip-path: inset(22% 18% 22% 18% round 10px);
+      clip-path: inset(0% 0% 70% 0%);
+      background-position: center top;
       background-image:
         linear-gradient(
-          135deg,
-          rgba(27, 32, 36, 0.4) 0%,
-          rgba(27, 32, 36, 0.2) 100%
+          180deg,
+          rgba(27, 32, 36, 0.28) 0%,
+          rgba(27, 32, 36, 0.12) 100%
         ),
         url("./../img/bg.png");
     }
@@ -75,6 +81,7 @@
   }
 
   @include mobile {
+    padding-top: 0;
     padding-bottom: 48px;
   }
 
@@ -121,10 +128,10 @@
   }
 
   @include mobile {
-    padding: 56px 0;
+    padding: 48px 0;
 
     &:first-child {
-      padding-top: 40px;
+      padding-top: 16px;
     }
 
     &:last-child {

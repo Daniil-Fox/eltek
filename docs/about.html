@@ -9,10 +9,11 @@
   <meta name="theme-color" content="#111111">
   <meta name="robots" content="noindex,nofollow">
   <title>Эльтек</title>
-  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="./img/favicon.png" type="image/png">
   <link rel="preload" href="./fonts/Exo2-Bold.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="preload" href="./fonts/Exo2-Medium.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="preload" href="./fonts/Exo2-Regular.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="./fonts/TTChocolates-Regular.woff2" as="font" type="font/woff2" crossorigin />
 
   <link rel="stylesheet" href="css/vendor.css" />
   <link rel="stylesheet" href="css/main.css" />
@@ -209,6 +210,7 @@
         </button>
 
         <form class="modal-form__form form">
+          <input type="hidden" name="service-order" value="" />
           <div class="modal-form__form-head">
             <h3 class="modal-form__form-title">Заявка на расчёт</h3>
             <p class="modal-form__form-note">Перезвоним в&nbsp;течение рабочего дня</p>
@@ -241,6 +243,7 @@
                   <option value="apartment">Квартира</option>
                   <option value="house">Частный дом</option>
                   <option value="commercial">Коммерческий объект</option>
+                  <option value="industrial">Промышленный объект</option>
                   <option value="other">Другое</option>
                 </select>
               </label>
@@ -270,11 +273,13 @@
 </div>
 
       <section class="about-hero">
-  <div class="about-hero__trigger about-hero__trigger--1"></div>
-  <div class="about-hero__trigger about-hero__trigger--2"></div>
-  <div class="about-hero__trigger about-hero__trigger--5"></div>
-  <div class="about-hero__trigger about-hero__trigger--6"></div>
-
+  <div class="about-hero__img">
+    <picture>
+      <source srcset="./img/subjects/dubrava.webp" type="image/webp" />
+      <img src="./img/subjects/dubrava.jpg" width="1920" height="1080" alt="Инженерные работы на объекте"
+        loading="lazy" />
+    </picture>
+  </div>
   <div class="about-hero__left about-main">
     <div class="about-main__ann-wrap" aria-hidden="true">
       <p class="about-main__ann">
@@ -319,11 +324,10 @@
     </div>
   </div>
 </section>
-
       <section class="about-buttons">
   <h2 class="visually-hidden">Направления работы</h2>
   <div class="about-buttons__container main-container">
-    <a href="index.html#services" class="about-buttons__btn about-btn" data-aos="custom-fade-up">
+    <a href="./services.html" class="about-buttons__btn about-btn" data-aos="custom-fade-up">
       <div class="about-btn__info">
         <h3>Инженерные услуги</h3>
         <p>Электромонтаж, проектирование, умный дом, слаботочные системы и&nbsp;обслуживание</p>
@@ -338,7 +342,8 @@
         </span>
       </div>
     </a>
-    <a href="#contact" class="about-buttons__btn about-btn" data-aos="custom-fade-up" data-aos-delay="200">
+    <a href="#" class="about-buttons__btn about-btn consult-btn" data-form-id="calc-form" data-aos="custom-fade-up"
+      data-aos-delay="200">
       <div class="about-btn__info">
         <h3>Расчёт стоимости</h3>
         <p>Бесплатная консультация, выезд инженера и&nbsp;прозрачная смета за&nbsp;1–2&nbsp;дня</p>
@@ -355,25 +360,28 @@
     </a>
   </div>
 </section>
-
       <section class="about-video">
   <div class="about-video__container main-container">
-    <div class="about-video__video">
-      <div class="about-video__wrapper">
-        <picture>
-          <source srcset="./img/schit.webp" type="image/webp" />
-          <img src="./img/schit.png" class="about-video__cover" alt="Сборка и монтаж электрощитового оборудования" loading="lazy" />
-        </picture>
-      </div>
-    </div>
-    <div class="about-video__content">
-      <h4 data-aos="custom-fade-up">Партнёрство и материалы</h4>
-      <h3 data-aos="custom-fade-up">Сертифицированные специалисты и&nbsp;проверенные поставщики</h3>
-      <p data-aos="custom-fade-up">
+    <div class="about-video__content about-head">
+      <p class="eyebrow eyebrow--about" data-aos="custom-fade-up">Партнёрство и материалы</p>
+      <h2 class="title" data-aos="custom-fade-up">Сертифицированные специалисты и&nbsp;проверенные поставщики</h2>
+      <p class="about-lead" data-aos="custom-fade-up">
         Благодаря сотрудничеству с&nbsp;«Электро Маркет» предлагаем материалы со&nbsp;скидкой до&nbsp;20%
         и&nbsp;гарантируем их&nbsp;подлинность. Команда проходит обучение и&nbsp;сертификацию
         у&nbsp;ведущих брендов отрасли.
       </p>
+    </div>
+
+    <div class="about-video__media" data-aos="custom-fade-up" data-aos-delay="100">
+      <picture>
+        <source srcset="./img/team/team-hor.webp" type="image/webp" />
+        <img
+          src="./img/team/team-hor.png"
+          class="about-video__cover"
+          alt="Команда Эльтек на объекте"
+          loading="lazy"
+        />
+      </picture>
     </div>
   </div>
   <div class="partners-marquee" data-aos="custom-fade-up">
@@ -435,11 +443,64 @@
 
 </section>
 
+      <section class="about-team">
+  <div class="about-team__container main-container">
+    <div class="about-team__head about-head">
+      <p class="eyebrow eyebrow--about" data-aos="custom-fade-up">Люди, которым доверяют</p>
+      <h2 class="title" data-aos="custom-fade-up" data-aos-delay="50">
+        Профессионалы своего дела
+      </h2>
+      <p class="about-lead" data-aos="custom-fade-up" data-aos-delay="100">
+        За каждым проектом стоит команда инженеров и&nbsp;монтажников с&nbsp;опытом
+        от&nbsp;10&nbsp;лет. Мы работаем официально, отвечаем за&nbsp;смету и&nbsp;сроки
+        и&nbsp;остаёмся на&nbsp;связи после сдачи объекта.
+      </p>
+    </div>
+
+    <ul class="about-team__grid list-reset">
+      <li class="about-team__item" data-aos="custom-fade-up" data-aos-delay="0">
+        <article class="about-team__card">
+          <div class="about-team__photo">
+            <img src="./img/team/Dmitriy-crop.webp" width="400" height="480" loading="lazy"
+              alt="Дмитрий — электромонтажник">
+          </div>
+          <div class="about-team__info">
+            <h3 class="about-team__name">Дмитрий</h3>
+            <p class="about-team__role">Электромонтажник</p>
+          </div>
+        </article>
+      </li>
+      <li class="about-team__item" data-aos="custom-fade-up" data-aos-delay="100">
+        <article class="about-team__card">
+          <div class="about-team__photo">
+            <img src="./img/team/Andrey-crop.webp" width="400" height="480" loading="lazy" alt="Андрей — менеджер">
+          </div>
+          <div class="about-team__info">
+            <h3 class="about-team__name">Андрей</h3>
+            <p class="about-team__role">Менеджер</p>
+          </div>
+        </article>
+      </li>
+      <li class="about-team__item" data-aos="custom-fade-up" data-aos-delay="200">
+        <article class="about-team__card">
+          <div class="about-team__photo">
+            <img src="./img/team/Pavel-crop.webp" width="400" height="480" loading="lazy"
+              alt="Павел — ведущий специалист">
+          </div>
+          <div class="about-team__info">
+            <h3 class="about-team__name">Павел</h3>
+            <p class="about-team__role">Ведущий специалист</p>
+          </div>
+        </article>
+      </li>
+    </ul>
+  </div>
+</section>
       <section class="about-harmony">
   <div class="main-container">
-    <div class="about-harmony__header">
-      <h2 data-aos="custom-fade-up">Почему клиенты доверяют нам</h2>
-      <p data-aos="custom-fade-up">
+    <div class="about-harmony__header about-head about-head--sm">
+      <h2 class="title" data-aos="custom-fade-up">Почему клиенты доверяют нам</h2>
+      <p class="about-lead" data-aos="custom-fade-up">
         Мы работаем с&nbsp;заказчиками, которым важен результат, а&nbsp;не&nbsp;временные решения.
         Каждый объект — приоритет: прорабатываем детали, чтобы электрика была безопасной и&nbsp;удобной в&nbsp;быту.
       </p>
@@ -483,14 +544,16 @@
   <div class="main-container">
     <div class="about-gift__row">
       <div class="about-gift__content">
-        <h4 class="about-gift__eyebrow" data-aos="custom-fade-up">Подход к работе</h4>
-        <h2 data-aos="custom-fade-up">Ваш объект&nbsp;&mdash; наш приоритет</h2>
-        <p data-aos="custom-fade-up">
+        <div class="about-head about-head--left">
+          <p class="eyebrow eyebrow--about" data-aos="custom-fade-up">Подход к работе</p>
+          <h2 class="title" data-aos="custom-fade-up">Ваш объект&nbsp;&mdash; наш приоритет</h2>
+        </div>
+        <p class="about-lead" data-aos="custom-fade-up">
           Прорабатываем каждую деталь: от&nbsp;расположения розеток до&nbsp;схемы щита и&nbsp;сценариев «умного дома».
           Погружаемся в&nbsp;проект с&nbsp;головой&nbsp;&mdash; чтобы инженерия работала на&nbsp;комфорт,
           а&nbsp;не&nbsp;мешала дизайну.
         </p>
-        <p data-aos="custom-fade-up">
+        <p class="about-lead" data-aos="custom-fade-up">
           8&nbsp;лет безупречной работы: знаем подводные камни электромонтажа и&nbsp;решаем их&nbsp;до&nbsp;того,
           как они станут проблемой.
         </p>
@@ -503,18 +566,17 @@
 
       <div class="about-gift__media" data-aos="custom-fade-up" data-aos-delay="100">
         <picture>
-          <source srcset="./img/montazh.webp" type="image/webp" />
-          <img src="./img/montazh.png" alt="Монтаж электропроводки на объекте" loading="lazy" />
+          <source srcset="./img/cable.webp" type="image/webp" />
+          <img src="./img/cable.png" width="503" height="503" alt="Монтаж электропроводки на объекте" loading="lazy" />
         </picture>
       </div>
     </div>
   </div>
 </section>
-
       <section class="about-prod">
-  <div class="about-prod__header">
-    <h2 data-aos="custom-fade-up">Как мы работаем на&nbsp;объекте</h2>
-    <p data-aos="custom-fade-up">
+  <div class="about-prod__header about-head about-head--sm about-head--spacing-lg">
+    <h2 class="title" data-aos="custom-fade-up">Как мы работаем на&nbsp;объекте</h2>
+    <p class="about-lead" data-aos="custom-fade-up">
       Контроль ключевых этапов под руководством главного инженера: от&nbsp;прокладки кабеля
       и&nbsp;сборки щитов до&nbsp;пусконаладки и&nbsp;передачи документации заказчику.
     </p>
@@ -522,29 +584,61 @@
   <div class="about-prod__container main-container">
     <div class="about-prod__slider swiper">
       <div class="swiper-wrapper">
-        <div class="swiper-slide">
-          <picture>
-            <source srcset="./img/montazh.webp" type="image/webp" />
-            <img src="./img/montazh.png" alt="Электромонтажные работы" loading="lazy" />
-          </picture>
+        <div class="swiper-slide about-prod__slide">
+          <figure class="about-prod__figure">
+            <picture>
+              <source srcset="./img/working/02.webp" type="image/webp" />
+              <img src="./img/working/02.jpg" alt="Прокладка кабельных линий на объекте" loading="lazy" />
+            </picture>
+          </figure>
         </div>
-        <div class="swiper-slide">
-          <picture>
-            <source srcset="./img/schit.webp" type="image/webp" />
-            <img src="./img/schit.png" alt="Монтаж электрощита" loading="lazy" />
-          </picture>
+        <div class="swiper-slide about-prod__slide">
+          <figure class="about-prod__figure">
+            <picture>
+              <source srcset="./img/working/03.webp" type="image/webp" />
+              <img src="./img/working/03.jpg" alt="Монтаж электропроводки" loading="lazy" />
+            </picture>
+          </figure>
         </div>
-        <div class="swiper-slide">
-          <picture>
-            <source srcset="./img/team.webp" type="image/webp" />
-            <img src="./img/team.png" alt="Команда инженеров на объекте" loading="lazy" />
-          </picture>
+        <div class="swiper-slide about-prod__slide">
+          <figure class="about-prod__figure">
+            <picture>
+              <source srcset="./img/working/04.webp" type="image/webp" />
+              <img src="./img/working/04.jpg" alt="Сборка электрощита" loading="lazy" />
+            </picture>
+          </figure>
         </div>
-        <div class="swiper-slide">
-          <picture>
-            <source srcset="./img/dogovor.webp" type="image/webp" />
-            <img src="./img/dogovor.png" alt="Сдача объекта с документацией" loading="lazy" />
-          </picture>
+        <div class="swiper-slide about-prod__slide">
+          <figure class="about-prod__figure">
+            <picture>
+              <source srcset="./img/working/06.webp" type="image/webp" />
+              <img src="./img/working/06.jpg" alt="Инженерный контроль на объекте" loading="lazy" />
+            </picture>
+          </figure>
+        </div>
+        <div class="swiper-slide about-prod__slide">
+          <figure class="about-prod__figure">
+            <picture>
+              <source srcset="./img/working/07.webp" type="image/webp" />
+              <img src="./img/working/07.jpg" alt="Пусконаладочные работы" loading="lazy" />
+            </picture>
+          </figure>
+        </div>
+        <div class="swiper-slide about-prod__slide">
+          <figure class="about-prod__figure">
+            <picture>
+              <source srcset="./img/working/08.webp" type="image/webp" />
+              <img src="./img/working/08.jpg" alt="Работа бригады на объекте" loading="lazy" />
+            </picture>
+          </figure>
+        </div>
+        <div class="swiper-slide about-prod__slide">
+          <figure class="about-prod__figure">
+            <picture>
+              <source srcset="./img/working/3223.webp" type="image/webp" />
+              <img src="./img/working/3223.jpg" alt="Сдача объекта заказчику" loading="lazy" />
+            </picture>
+          </figure>
         </div>
       </div>
     </div>
@@ -569,10 +663,9 @@
 
       <section class="about-mon">
   <div class="main-container about-mon__container">
-    <header class="about-mon__header" data-aos="custom-fade-up">
-      <h4 class="about-mon__eyebrow">Гарантии и ответственность</h4>
-      <h2 class="about-mon__title">Мы гарантируем</h2>
-
+    <header class="about-mon__header about-head about-head--sm" data-aos="custom-fade-up">
+      <p class="eyebrow eyebrow--about">Гарантии и ответственность</p>
+      <h2 class="title">Мы гарантируем</h2>
     </header>
 
 
@@ -599,10 +692,10 @@
 
       <section class="about-desc">
   <div class="main-container">
-    <div class="about-desc__header">
-      <h4 class="about-desc__eyebrow" data-aos="custom-fade-up">Эльтек Групп · Ярославль</h4>
-      <h2 data-aos="custom-fade-up">Электромонтаж и&nbsp;инженерные системы под ключ</h2>
-      <p data-aos="custom-fade-up">
+    <div class="about-desc__header about-head">
+      <p class="eyebrow eyebrow--about" data-aos="custom-fade-up">Эльтек Групп · Ярославль</p>
+      <h2 class="title" data-aos="custom-fade-up">Электромонтаж и&nbsp;инженерные системы под ключ</h2>
+      <p class="about-lead" data-aos="custom-fade-up">
         Проектируем и&nbsp;монтируем электроснабжение, слаботочные системы и&nbsp;«умный дом»
         для частных домов, квартир и&nbsp;коммерческих объектов.
       </p>
@@ -611,14 +704,14 @@
     <div class="about-desc__row">
       <div class="about-desc__media" data-aos="custom-fade-up" data-aos-delay="100">
         <picture>
-          <source srcset="./img/hero/hero3-2x.jpg" />
-          <img src="./img/hero/hero3.jpg" alt="Инженерные работы на объекте" loading="lazy" />
+          <source srcset="./img/montazh-pic.webp" type="image/webp" />
+          <img src="./img/montazh-pic.jpg" width="503" height="503" alt="Инженерные работы на объекте" loading="lazy" />
         </picture>
       </div>
 
       <div class="about-desc__content">
         <article data-aos="custom-fade-up" data-aos-delay="150">
-          <h3>Полный цикл работ</h3>
+          <h3 class="about-card-title">Полный цикл работ</h3>
           <p>
             От&nbsp;бесплатной консультации и&nbsp;выезда инженера до&nbsp;сдачи объекта с&nbsp;актами
             и&nbsp;исполнительной документацией. Прокладка кабелей, монтаж щитов, освещения,
@@ -626,7 +719,7 @@
           </p>
         </article>
         <article data-aos="custom-fade-up" data-aos-delay="200">
-          <h3>Нас выбирают за результат</h3>
+          <h3 class="about-card-title">Нас выбирают за результат</h3>
           <p>
             Собственная команда с&nbsp;опытом до&nbsp;20&nbsp;лет, фиксированная стоимость до&nbsp;начала работ,
             сдача без переделок. Материалы со&nbsp;скидкой от&nbsp;партнёра, сертифицированное оборудование
@@ -637,7 +730,6 @@
     </div>
   </div>
 </section>
-
       <section class="built-houses about-portfolio">
   <h2 class="visually-hidden">Реализованные объекты</h2>
 
@@ -657,52 +749,88 @@
       <ul class="built-houses__gallery list-reset">
         <li class="built-houses__card">
           <picture>
-            <source srcset="./img/hero/hero1-2x.jpg" />
-            <img src="./img/hero/hero1.jpg" alt="Частный дом — электромонтаж" loading="lazy" />
+            <source srcset="./img/subjects/chensi.webp" type="image/webp" />
+            <img src="./img/subjects/chensi.jpg" alt="ЖК «Ченси» — электромонтаж" loading="lazy" />
           </picture>
         </li>
         <li class="built-houses__card built-houses__card--offset">
           <picture>
-            <source srcset="./img/hero/hero2-2x.jpg" />
-            <img src="./img/hero/hero2.jpg" alt="Квартира — замена проводки" loading="lazy" />
+            <source srcset="./img/subjects/rivera.webp" type="image/webp" />
+            <img src="./img/subjects/rivera.jpg" alt="«Ривьера» — инженерные системы" loading="lazy" />
           </picture>
         </li>
         <li class="built-houses__card">
           <picture>
-            <source srcset="./img/hero/hero3-2x.jpg" />
-            <img src="./img/hero/hero3.jpg" alt="Коммерческий объект" loading="lazy" />
+            <source srcset="./img/subjects/alekseevskoe.webp" type="image/webp" />
+            <img src="./img/subjects/alekseevskoe.png" alt="«Алексеевское» — электромонтаж" loading="lazy" />
           </picture>
         </li>
         <li class="built-houses__card built-houses__card--offset">
           <picture>
-            <source srcset="./img/hero/hero4-2x.jpg" />
-            <img src="./img/hero/hero4.jpg" alt="Монтаж инженерных систем" loading="lazy" />
+            <source srcset="./img/subjects/trest.webp" type="image/webp" />
+            <img src="./img/subjects/trest.png" alt="«Трест» — монтаж на объекте" loading="lazy" />
+          </picture>
+        </li>
+        <li class="built-houses__card">
+          <picture>
+            <source srcset="./img/subjects/complex.webp" type="image/webp" />
+            <img src="./img/subjects/complex.png" alt="Коммерческий комплекс" loading="lazy" />
+          </picture>
+        </li>
+        <li class="built-houses__card built-houses__card--offset">
+          <picture>
+            <source srcset="./img/subjects/dubrava.webp" type="image/webp" />
+            <img src="./img/subjects/dubrava.jpg" alt="«Дубрава» — электромонтаж" loading="lazy" />
+          </picture>
+        </li>
+        <li class="built-houses__card">
+          <picture>
+            <source srcset="./img/subjects/gagrin.webp" type="image/webp" />
+            <img src="./img/subjects/gagrin.jpg" alt="«Гагарин» — инженерные работы" loading="lazy" />
           </picture>
         </li>
       </ul>
       <ul class="built-houses__gallery list-reset" aria-hidden="true">
         <li class="built-houses__card">
           <picture>
-            <source srcset="./img/hero/hero1-2x.jpg" />
-            <img src="./img/hero/hero1.jpg" alt="" loading="lazy" />
+            <source srcset="./img/subjects/chensi.webp" type="image/webp" />
+            <img src="./img/subjects/chensi.jpg" alt="" loading="lazy" />
           </picture>
         </li>
         <li class="built-houses__card built-houses__card--offset">
           <picture>
-            <source srcset="./img/hero/hero2-2x.jpg" />
-            <img src="./img/hero/hero2.jpg" alt="" loading="lazy" />
+            <source srcset="./img/subjects/rivera.webp" type="image/webp" />
+            <img src="./img/subjects/rivera.jpg" alt="" loading="lazy" />
           </picture>
         </li>
         <li class="built-houses__card">
           <picture>
-            <source srcset="./img/hero/hero3-2x.jpg" />
-            <img src="./img/hero/hero3.jpg" alt="" loading="lazy" />
+            <source srcset="./img/subjects/alekseevskoe.webp" type="image/webp" />
+            <img src="./img/subjects/alekseevskoe.png" alt="" loading="lazy" />
           </picture>
         </li>
         <li class="built-houses__card built-houses__card--offset">
           <picture>
-            <source srcset="./img/hero/hero4-2x.jpg" />
-            <img src="./img/hero/hero4.jpg" alt="" loading="lazy" />
+            <source srcset="./img/subjects/trest.webp" type="image/webp" />
+            <img src="./img/subjects/trest.png" alt="" loading="lazy" />
+          </picture>
+        </li>
+        <li class="built-houses__card">
+          <picture>
+            <source srcset="./img/subjects/complex.webp" type="image/webp" />
+            <img src="./img/subjects/complex.png" alt="" loading="lazy" />
+          </picture>
+        </li>
+        <li class="built-houses__card built-houses__card--offset">
+          <picture>
+            <source srcset="./img/subjects/dubrava.webp" type="image/webp" />
+            <img src="./img/subjects/dubrava.jpg" alt="" loading="lazy" />
+          </picture>
+        </li>
+        <li class="built-houses__card">
+          <picture>
+            <source srcset="./img/subjects/gagrin.webp" type="image/webp" />
+            <img src="./img/subjects/gagrin.jpg" alt="" loading="lazy" />
           </picture>
         </li>
       </ul>
@@ -805,38 +933,54 @@
       <div class="mobile-menu mobile-menu--active">
   <ul class="mobile-menu__list list-reset">
     <li class="mobile-menu__item">
-      <button
-        class="mobile-menu__btn mobile-menu__btn--call btn-reset"
-        data-form-id="call-btn-main-mob"
-      ></button>
-    </li>
-    <li class="mobile-menu__item">
-      <a
-        href="https://api.whatsapp.com/send?phone=78006007008"
-        class="mobile-menu__btn mobile-menu__btn--whatsapp btn-reset"
-      >
-      </a>
-    </li>
-    <li class="mobile-menu__item">
-      <a
-        href="tg://resolve?domain=username"
-        class="mobile-menu__btn mobile-menu__btn--telegram btn-reset"
-      >
-      </a>
-    </li>
-    <li class="mobile-menu__item">
-      <button
-        class="mobile-menu__btn mobile-menu__btn--search btn-reset"
-      ></button>
-    </li>
-    <li class="mobile-menu__item">
-      <button class="mobile-menu__btn mobile-menu__btn--favorites btn-reset">
-        <span class="favorites-btn__quantity">0</span>
+      <button type="button" class="mobile-menu__btn mobile-menu__btn--call btn-reset" aria-label="Позвонить">
+        <svg width="32" height="32" viewBox="0 0 24 23" fill="none" aria-hidden="true">
+          <path
+            d="M6.5024 1.90985C5.93509 2.22812 5.51405 2.50153 4.87008 3.02702C4.36283 3.44095 4.07391 4.07015 4.12626 4.72276C4.62623 10.9559 9.50105 18.0352 13.9244 21.2243C14.5081 21.6451 15.276 21.7024 15.9262 21.394C16.8419 20.9596 17.2977 20.6294 17.9389 20.1169C18.8434 19.394 19.0869 18.1037 18.4925 17.11L17.6035 15.624C17.022 14.6518 15.7541 14.3493 14.7963 14.954C14.1466 15.3642 13.3107 15.382 12.6976 14.919C10.756 13.4527 9.59877 11.6318 8.94145 9.17601C8.72685 8.37422 9.04803 7.5367 9.69222 7.01329L9.83922 6.89386C10.7362 6.16507 10.942 4.87852 10.3172 3.90625L9.52973 2.68085C8.88116 1.67162 7.54865 1.32287 6.5024 1.90985Z"
+            stroke="currentColor" stroke-width="1.5" />
+          <path d="M14.9064 6.05078C17.1559 6.34724 18.4579 8.04454 18.112 10.6689" stroke="currentColor"
+            stroke-width="1.5" stroke-linecap="round" />
+          <path d="M16.337 2C20.3861 2.53363 22.6902 5.8887 21.9985 11.1375" stroke="currentColor" stroke-width="1.5"
+            stroke-linecap="round" />
+        </svg>
       </button>
+    </li>
+    <li class="mobile-menu__item">
+      <a href="https://max.ru/" class="mobile-menu__btn mobile-menu__btn--max btn-reset" target="_blank"
+        rel="noopener noreferrer" aria-label="MAX">
+        <!-- <img src="./img/svg/max.svg" width="32" height="32" alt=""> -->
+        <svg width="32" height="32">
+          <use xlink:href="img/sprite.svg#max"></use>
+        </svg>
+      </a>
+    </li>
+    <li class="mobile-menu__item">
+      <a href="./favorites.html" class="mobile-menu__btn mobile-menu__btn--favorites btn-reset" aria-label="Избранное">
+        <svg width="32" height="32" viewBox="0 0 25 20" fill="none" aria-hidden="true">
+          <path fill-rule="evenodd" clip-rule="evenodd"
+            d="M12.5016 19L7.90742 14.8433L3.34944 10.6866C0.88352 8.38936 0.88352 4.79383 3.34944 2.49656C4.5569 1.47355 6.19235 0.938962 7.86449 1.02068C9.53662 1.1024 11.095 1.79312 12.1668 2.92752L12.5016 3.21708L12.8332 2.915C13.905 1.7806 15.4634 1.08988 17.1355 1.00816C18.8076 0.926446 20.4431 1.46103 21.6506 2.48404C24.1165 4.78132 24.1165 8.37684 21.6506 10.6741L17.0925 14.8308L12.5016 19Z"
+            stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+      </a>
     </li>
   </ul>
 </div>
 
+<div class="modal modal-phone" data-lenis-prevent>
+  <div class="modal-phone__dialog" role="dialog" aria-modal="true" aria-labelledby="modal-phone-title">
+    <button type="button" class="modal-phone__close modal__close btn-reset" aria-label="Закрыть">
+      <svg width="24" height="24">
+        <use xlink:href="img/sprite.svg#cross"></use>
+      </svg>
+    </button>
+    <h3 class="modal-phone__title" id="modal-phone-title">Позвонить</h3>
+    <p class="modal-phone__note">Выберите номер для связи</p>
+    <div class="modal-phone__links">
+      <a class="modal-phone__link" href="tel:+79109710556">+7 910 971 05 56</a>
+      <a class="modal-phone__link" href="tel:+79109710567">+7 910 971 05 67</a>
+    </div>
+  </div>
+</div>
       <button class="up-page-btn btn-reset"></button>
     </main>
     <footer class="footer">

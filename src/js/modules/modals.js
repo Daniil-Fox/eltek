@@ -63,7 +63,12 @@ export function initModals() {
   document
     .querySelector(".mobile-menu__btn--call")
     ?.addEventListener("click", (e) => {
-      openForm(e.currentTarget.dataset.formId);
+      e.preventDefault();
+      const phoneModal = document.querySelector(".modal-phone");
+      if (!phoneModal) return;
+
+      phoneModal.classList.add("active");
+      lenis.stop();
     });
 
   document.querySelectorAll(".modal").forEach((modal) => {

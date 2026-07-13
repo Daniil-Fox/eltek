@@ -19,6 +19,24 @@
 
     &--main {
       background-color: var(--focus-color);
+
+      .menu-left__item,
+      .menu-left__item a,
+      .menu-right__heading,
+      .menu-right__heading a,
+      .menu-right__link {
+        color: var(--white-color);
+      }
+
+      .menu__close-btn svg {
+        stroke: var(--white-color);
+      }
+
+      .address__tel,
+      .address__mail,
+      .address__address {
+        color: var(--white-color);
+      }
     }
   }
 
@@ -57,7 +75,7 @@
       width: 100%;
       height: 100%;
       stroke-width: 2px;
-      stroke: var(--black-brand-color);
+      stroke: var(--white-color);
       transition: stroke 0.3s ease;
     }
 
@@ -271,7 +289,7 @@
     &__tel,
     &__mail,
     &__address {
-      color: var(--black-brand-color);
+      // color: var(--black-brand-color);
       font-size: 20px;
       font-weight: 500;
       letter-spacing: 1.2px;

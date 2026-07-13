@@ -357,27 +357,44 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var swiper__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! swiper */ "./node_modules/swiper/swiper.esm.js");
 
 
-swiper_bundle__WEBPACK_IMPORTED_MODULE_0__.Swiper.use([swiper__WEBPACK_IMPORTED_MODULE_1__.Navigation]);
+swiper_bundle__WEBPACK_IMPORTED_MODULE_0__.Swiper.use([swiper__WEBPACK_IMPORTED_MODULE_1__.EffectCoverflow, swiper__WEBPACK_IMPORTED_MODULE_1__.Navigation]);
 function initAboutProdSlider() {
   const sliderEl = document.querySelector(".about-prod__slider");
   if (!sliderEl) return null;
   return new swiper_bundle__WEBPACK_IMPORTED_MODULE_0__.Swiper(sliderEl, {
-    slidesPerView: 1.4,
+    effect: "coverflow",
+    grabCursor: true,
     centeredSlides: true,
-    spaceBetween: 24,
+    slidesPerView: "auto",
     loop: true,
+    loopAdditionalSlides: 2,
+    speed: 650,
+    spaceBetween: 0,
+    coverflowEffect: {
+      rotate: 0,
+      stretch: -16,
+      depth: 120,
+      modifier: 1.05,
+      slideShadows: false
+    },
     navigation: {
       nextEl: ".prod-control__btn--next",
       prevEl: ".prod-control__btn--prev"
     },
     breakpoints: {
       768: {
-        slidesPerView: 2.2,
-        spaceBetween: 32
+        coverflowEffect: {
+          stretch: -22,
+          depth: 150,
+          modifier: 1.12
+        }
       },
       1200: {
-        slidesPerView: 2.6,
-        spaceBetween: 40
+        coverflowEffect: {
+          stretch: -28,
+          depth: 180,
+          modifier: 1.18
+        }
       }
     }
   });
@@ -406,8 +423,22 @@ __webpack_require__.r(__webpack_exports__);
 
 gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.registerPlugin(gsap_all__WEBPACK_IMPORTED_MODULE_1__.ScrollTrigger);
 const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+const mobileMq = window.matchMedia("(max-width: 850px)");
 const CLIP_EXPAND_FROM = "polygon(25% 35%, 75% 35%, 75% 75%, 25% 75%)";
 const CLIP_EXPAND_TO = "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)";
+
+// Мобильная версия: полная ширина, раскрытие только вниз от верха (без боковых отступов)
+const CLIP_EXPAND_FROM_MOBILE = "inset(0% 0% 70% 0%)";
+const CLIP_EXPAND_TO_MOBILE = "inset(0% 0% 0% 0%)";
+function getClipExpandFrom() {
+  return mobileMq.matches ? CLIP_EXPAND_FROM_MOBILE : CLIP_EXPAND_FROM;
+}
+function getClipExpandTo() {
+  return mobileMq.matches ? CLIP_EXPAND_TO_MOBILE : CLIP_EXPAND_TO;
+}
+function getExpandScrollEnd() {
+  return mobileMq.matches ? "+=38%" : "+=55%";
+}
 const PARALLAX = {
   mainY: 16,
   miniY: 28,
@@ -436,7 +467,7 @@ function initAdvantagesParallax() {
   requestAnimationFrame(() => {
     if (prefersReducedMotion) {
       gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.set(media, {
-        clipPath: CLIP_EXPAND_TO
+        clipPath: getClipExpandTo()
       });
       if (shade) gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.set(shade, {
         opacity: 1
@@ -455,14 +486,14 @@ function initAdvantagesParallax() {
       return;
     }
     gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.set(media, {
-      clipPath: CLIP_EXPAND_FROM
+      clipPath: getClipExpandFrom()
     });
     if (shade) gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.set(shade, {
       opacity: 0
     });
     const expandTimeline = gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.timeline();
     expandTimeline.to(media, {
-      clipPath: CLIP_EXPAND_TO,
+      clipPath: getClipExpandTo(),
       ease: "none",
       duration: 1
     }).to(shade, {
@@ -484,8 +515,8 @@ function initAdvantagesParallax() {
       animation: expandTimeline,
       trigger: reveal,
       start: "top top",
-      end: "+=55%",
-      scrub: 0.35,
+      end: getExpandScrollEnd(),
+      scrub: mobileMq.matches ? 0.25 : 0.35,
       invalidateOnRefresh: true
     });
     blocks.forEach(block => {
@@ -1014,17 +1045,19 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _faq_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./faq.js */ "./src/js/modules/faq.js");
 /* harmony import */ var _responsibility_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./responsibility.js */ "./src/js/modules/responsibility.js");
 /* harmony import */ var _forms_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./forms.js */ "./src/js/modules/forms.js");
-/* harmony import */ var _sliders_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./sliders.js */ "./src/js/modules/sliders.js");
-/* harmony import */ var _advantages_parallax_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./advantages-parallax.js */ "./src/js/modules/advantages-parallax.js");
-/* harmony import */ var _services_section_js__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./services-section.js */ "./src/js/modules/services-section.js");
-/* harmony import */ var _modals_js__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./modals.js */ "./src/js/modules/modals.js");
-/* harmony import */ var _ui_js__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./ui.js */ "./src/js/modules/ui.js");
-/* harmony import */ var _circle_progress_js__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./circle-progress.js */ "./src/js/modules/circle-progress.js");
-/* harmony import */ var _about_page_js__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./about-page.js */ "./src/js/modules/about-page.js");
-/* harmony import */ var _design_section_js__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./design-section.js */ "./src/js/modules/design-section.js");
-/* harmony import */ var _contacts_map_js__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./contacts-map.js */ "./src/js/modules/contacts-map.js");
-/* harmony import */ var _portfolio_filter_js__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./portfolio-filter.js */ "./src/js/modules/portfolio-filter.js");
-/* harmony import */ var _project_gallery_js__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./project-gallery.js */ "./src/js/modules/project-gallery.js");
+/* harmony import */ var _service_order_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./service-order.js */ "./src/js/modules/service-order.js");
+/* harmony import */ var _sliders_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./sliders.js */ "./src/js/modules/sliders.js");
+/* harmony import */ var _advantages_parallax_js__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./advantages-parallax.js */ "./src/js/modules/advantages-parallax.js");
+/* harmony import */ var _services_section_js__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./services-section.js */ "./src/js/modules/services-section.js");
+/* harmony import */ var _modals_js__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./modals.js */ "./src/js/modules/modals.js");
+/* harmony import */ var _ui_js__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./ui.js */ "./src/js/modules/ui.js");
+/* harmony import */ var _circle_progress_js__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./circle-progress.js */ "./src/js/modules/circle-progress.js");
+/* harmony import */ var _about_page_js__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./about-page.js */ "./src/js/modules/about-page.js");
+/* harmony import */ var _design_section_js__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./design-section.js */ "./src/js/modules/design-section.js");
+/* harmony import */ var _contacts_map_js__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./contacts-map.js */ "./src/js/modules/contacts-map.js");
+/* harmony import */ var _portfolio_filter_js__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./portfolio-filter.js */ "./src/js/modules/portfolio-filter.js");
+/* harmony import */ var _project_gallery_js__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./project-gallery.js */ "./src/js/modules/project-gallery.js");
+
 
 
 
@@ -1045,29 +1078,30 @@ __webpack_require__.r(__webpack_exports__);
 
 
 function initMainPage() {
-  (0,_sliders_js__WEBPACK_IMPORTED_MODULE_8__.initSliders)();
+  (0,_sliders_js__WEBPACK_IMPORTED_MODULE_9__.initSliders)();
   (0,_header_scroll_js__WEBPACK_IMPORTED_MODULE_2__.initHeaderScroll)();
   (0,_header_contact_js__WEBPACK_IMPORTED_MODULE_3__.initHeaderContact)();
   (0,_projects_js__WEBPACK_IMPORTED_MODULE_4__.initProjectCards)();
   (0,_faq_js__WEBPACK_IMPORTED_MODULE_5__.initFaqAccordion)();
   (0,_forms_js__WEBPACK_IMPORTED_MODULE_7__.initConsultButtons)();
   (0,_forms_js__WEBPACK_IMPORTED_MODULE_7__.initFormLabels)();
-  (0,_modals_js__WEBPACK_IMPORTED_MODULE_11__.initModals)();
-  (0,_ui_js__WEBPACK_IMPORTED_MODULE_12__.initUi)();
-  (0,_circle_progress_js__WEBPACK_IMPORTED_MODULE_13__.initCircleProgress)();
-  (0,_services_section_js__WEBPACK_IMPORTED_MODULE_10__.initServicesSection)();
+  (0,_service_order_js__WEBPACK_IMPORTED_MODULE_8__.initServiceOrderButtons)();
+  (0,_modals_js__WEBPACK_IMPORTED_MODULE_12__.initModals)();
+  (0,_ui_js__WEBPACK_IMPORTED_MODULE_13__.initUi)();
+  (0,_circle_progress_js__WEBPACK_IMPORTED_MODULE_14__.initCircleProgress)();
+  (0,_services_section_js__WEBPACK_IMPORTED_MODULE_11__.initServicesSection)();
   window.addEventListener("DOMContentLoaded", () => {
     const hasPreloader = document.querySelector(".preloader");
     if (!hasPreloader) {
       document.body.style.overflow = null;
       _core_lenis_js__WEBPACK_IMPORTED_MODULE_0__["default"].start();
     }
-    (0,_advantages_parallax_js__WEBPACK_IMPORTED_MODULE_9__.initAdvantagesParallax)();
-    (0,_about_page_js__WEBPACK_IMPORTED_MODULE_14__.initAboutPage)();
-    (0,_design_section_js__WEBPACK_IMPORTED_MODULE_15__.initDesignSection)();
-    (0,_contacts_map_js__WEBPACK_IMPORTED_MODULE_16__.initContactsMap)();
-    (0,_portfolio_filter_js__WEBPACK_IMPORTED_MODULE_17__.initPortfolioFilter)();
-    (0,_project_gallery_js__WEBPACK_IMPORTED_MODULE_18__.initProjectGallery)();
+    (0,_advantages_parallax_js__WEBPACK_IMPORTED_MODULE_10__.initAdvantagesParallax)();
+    (0,_about_page_js__WEBPACK_IMPORTED_MODULE_15__.initAboutPage)();
+    (0,_design_section_js__WEBPACK_IMPORTED_MODULE_16__.initDesignSection)();
+    (0,_contacts_map_js__WEBPACK_IMPORTED_MODULE_17__.initContactsMap)();
+    (0,_portfolio_filter_js__WEBPACK_IMPORTED_MODULE_18__.initPortfolioFilter)();
+    (0,_project_gallery_js__WEBPACK_IMPORTED_MODULE_19__.initProjectGallery)();
     gsap_all__WEBPACK_IMPORTED_MODULE_1__.ScrollTrigger.refresh();
     if (window.__responsibilitySlider) {
       (0,_responsibility_js__WEBPACK_IMPORTED_MODULE_6__.initResponsibilityScroll)(window.__responsibilitySlider);
@@ -1139,7 +1173,11 @@ function initModals() {
     openForm(e.currentTarget.dataset.formId);
   });
   document.querySelector(".mobile-menu__btn--call")?.addEventListener("click", e => {
-    openForm(e.currentTarget.dataset.formId);
+    e.preventDefault();
+    const phoneModal = document.querySelector(".modal-phone");
+    if (!phoneModal) return;
+    phoneModal.classList.add("active");
+    _core_lenis_js__WEBPACK_IMPORTED_MODULE_0__["default"].stop();
   });
   document.querySelectorAll(".modal").forEach(modal => {
     modal.addEventListener("click", e => {
@@ -1435,6 +1473,150 @@ function initResponsibilityScroll(responsibilitySlider) {
 
 /***/ },
 
+/***/ "./src/js/modules/service-order.js"
+/*!*****************************************!*\
+  !*** ./src/js/modules/service-order.js ***!
+  \*****************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   initServiceOrderButtons: () => (/* binding */ initServiceOrderButtons)
+/* harmony export */ });
+/* harmony import */ var _core_lenis_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../core/lenis.js */ "./src/js/core/lenis.js");
+
+const SERVICE_ORDERS = {
+  apartment: {
+    formId: "order-apartment",
+    title: "Электромонтаж в квартире",
+    lead: "Замена проводки, щиты, освещение и&nbsp;розеточные группы&nbsp;&mdash; под вашу планировку, этап ремонта и&nbsp;бюджет.",
+    formTitle: "Заявка: квартира",
+    formNote: "Уточним площадь, сроки и&nbsp;этап отделки",
+    objectType: "apartment",
+    image: "./img/chensi/01.jpg"
+  },
+  house: {
+    formId: "order-house",
+    title: "Электромонтаж в частном доме",
+    lead: "Проект, ввод, щитовое оборудование и&nbsp;разводка по&nbsp;этажам&nbsp;&mdash; с&nbsp;учётом мощности и&nbsp;будущих систем.",
+    formTitle: "Заявка: частный дом",
+    formNote: "Рассчитаем смету под площадь и&nbsp;комплектацию",
+    objectType: "house",
+    image: "./img/bens/01.jpg"
+  },
+  commercial: {
+    formId: "order-commercial",
+    title: "Электромонтаж для коммерческого объекта",
+    lead: "Офисы, торговые и&nbsp;общественные пространства&nbsp;&mdash; с&nbsp;соблюдением норм и&nbsp;графика работ.",
+    formTitle: "Заявка: коммерческий объект",
+    formNote: "Подготовим решение под ваш формат и&nbsp;сроки",
+    objectType: "commercial",
+    image: "./img/catalogue/01-1.jpg"
+  },
+  industrial: {
+    formId: "order-industrial",
+    title: "Электромонтаж для промышленного объекта",
+    lead: "Силовые линии, распределительные щиты и&nbsp;монтаж под нагрузку&nbsp;&mdash; с&nbsp;исполнительной документацией.",
+    formTitle: "Заявка: промышленный объект",
+    formNote: "Обсудим мощность, сроки и&nbsp;этапы работ",
+    objectType: "industrial",
+    image: "./img/hero/06.jpg"
+  }
+};
+const ASIDE_GRADIENT = "linear-gradient(160deg, rgba(27, 32, 36, 0.96) 0%, rgba(21, 25, 30, 1) 100%)";
+function setAsideBackground(aside, image) {
+  if (!aside) return;
+  if (image) {
+    aside.style.backgroundImage = `${ASIDE_GRADIENT}, url("${image}")`;
+    aside.style.backgroundSize = "cover";
+    aside.style.backgroundPosition = "center";
+    aside.style.backgroundRepeat = "no-repeat";
+    return;
+  }
+  aside.style.backgroundImage = "";
+  aside.style.backgroundSize = "";
+  aside.style.backgroundPosition = "";
+  aside.style.backgroundRepeat = "";
+}
+function initServiceOrderButtons() {
+  const modal = document.querySelector(".modal-form");
+  if (!modal) return;
+  const titleEl = modal.querySelector(".modal-form__title");
+  const leadEl = modal.querySelector(".modal-form__lead");
+  const formTitleEl = modal.querySelector(".modal-form__form-title");
+  const formNoteEl = modal.querySelector(".modal-form__form-note");
+  const asideEl = modal.querySelector(".modal-form__aside");
+  const objectSelect = modal.querySelector('[name="object-type"]');
+  const hiddenInput = modal.querySelector('[name="service-order"]');
+  if (!titleEl || !leadEl || !formTitleEl) return;
+  const defaults = {
+    title: titleEl.innerHTML,
+    lead: leadEl.innerHTML,
+    formTitle: formTitleEl.textContent,
+    formNote: formNoteEl?.textContent ?? "",
+    formId: modal.getAttribute("form-id") ?? "",
+    objectType: objectSelect?.value ?? "",
+    serviceOrder: hiddenInput?.value ?? ""
+  };
+  const applyServiceOrder = key => {
+    const config = SERVICE_ORDERS[key];
+    if (!config) return;
+    titleEl.textContent = config.title;
+    leadEl.innerHTML = config.lead;
+    formTitleEl.textContent = config.formTitle;
+    if (formNoteEl) {
+      formNoteEl.innerHTML = config.formNote;
+    }
+    if (objectSelect) {
+      objectSelect.value = config.objectType;
+    }
+    if (hiddenInput) {
+      hiddenInput.value = key;
+    }
+    setAsideBackground(asideEl, config.image);
+    modal.setAttribute("form-id", config.formId);
+  };
+  const resetServiceOrder = () => {
+    titleEl.innerHTML = defaults.title;
+    leadEl.innerHTML = defaults.lead;
+    formTitleEl.textContent = defaults.formTitle;
+    if (formNoteEl) {
+      formNoteEl.textContent = defaults.formNote;
+    }
+    if (objectSelect) {
+      objectSelect.value = defaults.objectType;
+    }
+    if (hiddenInput) {
+      hiddenInput.value = defaults.serviceOrder;
+    }
+    setAsideBackground(asideEl, null);
+    if (defaults.formId) {
+      modal.setAttribute("form-id", defaults.formId);
+    } else {
+      modal.removeAttribute("form-id");
+    }
+  };
+  document.querySelectorAll(".service-order-btn").forEach(btn => {
+    btn.addEventListener("click", e => {
+      e.preventDefault();
+      e.stopPropagation();
+      applyServiceOrder(btn.dataset.serviceOrder);
+      modal.classList.add("active");
+      _core_lenis_js__WEBPACK_IMPORTED_MODULE_0__["default"].stop();
+    });
+  });
+  modal.querySelectorAll(".modal__close").forEach(btn => {
+    btn.addEventListener("click", resetServiceOrder);
+  });
+  modal.addEventListener("click", e => {
+    if (e.target !== modal) return;
+    resetServiceOrder();
+  });
+}
+
+/***/ },
+
 /***/ "./src/js/modules/services-section.js"
 /*!********************************************!*\
   !*** ./src/js/modules/services-section.js ***!
@@ -1451,16 +1633,11 @@ __webpack_require__.r(__webpack_exports__);
 
 gsap_all__WEBPACK_IMPORTED_MODULE_0__.gsap.registerPlugin(gsap_all__WEBPACK_IMPORTED_MODULE_1__.ScrollTrigger);
 function initServicesSection() {
-  if (window.matchMedia("(max-width: 1023px)").matches) return;
   const textItems = document.querySelectorAll(".services-section__item");
   if (!textItems.length) return;
   const imageItems = document.querySelectorAll(".services-section__item-image");
-  const line = document.querySelector(".services-section__line");
-  const firstItem = textItems[0];
-  const container = document.querySelector(".services-section__container");
   const badgeCurrent = document.querySelector(".services-section__badge-current");
   const railFill = document.querySelector(".services-section__rail-fill");
-  if (!line || !firstItem || !container) return;
   const totalSteps = textItems.length;
   let activeIndex = -1;
   const setActiveStep = index => {
@@ -1480,41 +1657,125 @@ function initServicesSection() {
       railFill.style.height = `${next / (totalSteps - 1) * 100}%`;
     }
   };
-  const stepFromProgress = progress => Math.round(Math.min(1, Math.max(0, progress)) * (totalSteps - 1));
-  const snapConfig = totalSteps > 1 ? {
-    snapTo: 1 / (totalSteps - 1),
-    duration: {
-      min: 0.25,
-      max: 0.55
-    },
-    delay: 0.06,
-    ease: "power2.inOut",
-    directional: false
-  } : false;
-  const list = document.querySelector(".services-section__list");
-  if (!list) return;
-  const timeline = gsap_all__WEBPACK_IMPORTED_MODULE_0__.gsap.timeline();
-  timeline.fromTo(list, {
-    y: () => -firstItem.offsetHeight
-  }, {
-    y: () => -list.scrollHeight,
-    ease: "none"
+  const mm = gsap_all__WEBPACK_IMPORTED_MODULE_0__.gsap.matchMedia();
+  mm.add("(min-width: 1024px)", () => {
+    const line = document.querySelector(".services-section__line");
+    const firstItem = textItems[0];
+    const container = document.querySelector(".services-section__container");
+    const list = document.querySelector(".services-section__list");
+    if (!line || !firstItem || !container || !list) return;
+    const stepFromProgress = progress => Math.round(Math.min(1, Math.max(0, progress)) * (totalSteps - 1));
+    const snapConfig = totalSteps > 1 ? {
+      snapTo: 1 / (totalSteps - 1),
+      duration: {
+        min: 0.25,
+        max: 0.55
+      },
+      delay: 0.06,
+      ease: "power2.inOut",
+      directional: false
+    } : false;
+    const timeline = gsap_all__WEBPACK_IMPORTED_MODULE_0__.gsap.timeline();
+    timeline.fromTo(list, {
+      y: () => -firstItem.offsetHeight
+    }, {
+      y: () => -list.scrollHeight,
+      ease: "none"
+    });
+    const trigger = gsap_all__WEBPACK_IMPORTED_MODULE_1__.ScrollTrigger.create({
+      animation: timeline,
+      trigger: ".services-section__line",
+      start: "center center",
+      end: "+=220%",
+      scrub: 0.45,
+      pin: ".services-section__container",
+      anticipatePin: 1,
+      invalidateOnRefresh: true,
+      snap: snapConfig,
+      onUpdate: self => {
+        setActiveStep(stepFromProgress(self.progress));
+      }
+    });
+    setActiveStep(0);
+    return () => {
+      trigger.kill();
+      timeline.kill();
+      gsap_all__WEBPACK_IMPORTED_MODULE_0__.gsap.set(list, {
+        clearProps: "transform"
+      });
+      activeIndex = -1;
+    };
   });
-  gsap_all__WEBPACK_IMPORTED_MODULE_1__.ScrollTrigger.create({
-    animation: timeline,
-    trigger: ".services-section__line",
-    start: "center center",
-    end: "+=220%",
-    scrub: 0.45,
-    pin: ".services-section__container",
-    anticipatePin: 1,
-    invalidateOnRefresh: true,
-    snap: snapConfig,
-    onUpdate: self => {
-      setActiveStep(stepFromProgress(self.progress));
-    }
+  mm.add("(max-width: 1023px)", () => {
+    const scroller = document.querySelector(".services-section__list-scroller");
+    const list = document.querySelector(".services-section__list");
+    if (!scroller || !list) return;
+    gsap_all__WEBPACK_IMPORTED_MODULE_0__.gsap.set(list, {
+      clearProps: "transform"
+    });
+    const getClosestIndex = () => {
+      const scrollerRect = scroller.getBoundingClientRect();
+      const center = scrollerRect.left + scrollerRect.width / 2;
+      let closestIndex = 0;
+      let closestDist = Infinity;
+      textItems.forEach((item, i) => {
+        const rect = item.getBoundingClientRect();
+        const itemCenter = rect.left + rect.width / 2;
+        const dist = Math.abs(center - itemCenter);
+        if (dist < closestDist) {
+          closestDist = dist;
+          closestIndex = i;
+        }
+      });
+      return closestIndex;
+    };
+    const scrollItemIntoView = index => {
+      const item = textItems[index];
+      const scrollerRect = scroller.getBoundingClientRect();
+      const itemRect = item.getBoundingClientRect();
+      const offset = itemRect.left - scrollerRect.left - (scrollerRect.width - itemRect.width) / 2;
+      scroller.scrollBy({
+        left: offset,
+        behavior: "smooth"
+      });
+    };
+    let scrollRaf = null;
+    const onScroll = () => {
+      if (scrollRaf) return;
+      scrollRaf = requestAnimationFrame(() => {
+        scrollRaf = null;
+        setActiveStep(getClosestIndex());
+      });
+    };
+    scroller.addEventListener("scroll", onScroll, {
+      passive: true
+    });
+    const clickHandlers = [];
+    textItems.forEach((item, i) => {
+      const handler = () => {
+        scrollItemIntoView(i);
+        setActiveStep(i);
+      };
+      item.addEventListener("click", handler);
+      clickHandlers.push({
+        item,
+        handler
+      });
+    });
+    setActiveStep(0);
+    requestAnimationFrame(onScroll);
+    return () => {
+      scroller.removeEventListener("scroll", onScroll);
+      clickHandlers.forEach(({
+        item,
+        handler
+      }) => {
+        item.removeEventListener("click", handler);
+      });
+      if (scrollRaf) cancelAnimationFrame(scrollRaf);
+      activeIndex = -1;
+    };
   });
-  setActiveStep(0);
 }
 
 /***/ },

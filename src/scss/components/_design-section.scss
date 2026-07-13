@@ -1,7 +1,7 @@
 .design-section {
   padding-bottom: 120px;
 
-  h1 {
+  h1:not(.title) {
     margin: 0;
     padding: 30px;
     max-width: 1000px;
@@ -89,7 +89,7 @@
       }
     }
 
-    h2 {
+    h2:not(.title) {
       @include ui-section-title;
       margin-bottom: 24px;
       text-transform: uppercase;
@@ -99,7 +99,7 @@
       }
     }
 
-    p {
+    p:not(.about-lead) {
       margin: 0;
       max-width: 570px;
       color: var(--black-brand-color);

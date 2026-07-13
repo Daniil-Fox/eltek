@@ -25,7 +25,6 @@
   &__intro {
     margin-bottom: 16px;
     padding: 0 30px 48px;
-    text-align: center;
 
     @media (min-width: 1440px) {
       margin-bottom: 1.6rem;
@@ -34,31 +33,6 @@
 
     @include mobile {
       padding: 0 16px 32px;
-    }
-  }
-
-  &__title {
-    margin: 0 0 20px;
-
-    @media (min-width: 1440px) {
-      margin-bottom: 2rem;
-    }
-  }
-
-  &__lead {
-    margin: 0 auto;
-    max-width: 640px;
-    color: var(--gray-middle-color);
-    font-size: 17px;
-    line-height: 160%;
-
-    @media (min-width: 1440px) {
-      max-width: 64rem;
-      font-size: 1.7rem;
-    }
-
-    @include mobile {
-      font-size: 15px;
     }
   }
 
@@ -118,7 +92,7 @@
   }
 
   &__name {
-    @include ui-section-title;
+    margin: 0;
   }
 
   &__desc {

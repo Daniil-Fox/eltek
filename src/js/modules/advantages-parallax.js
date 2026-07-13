@@ -7,8 +7,26 @@ const prefersReducedMotion = window.matchMedia(
   "(prefers-reduced-motion: reduce)",
 ).matches;
 
+const mobileMq = window.matchMedia("(max-width: 850px)");
+
 const CLIP_EXPAND_FROM = "polygon(25% 35%, 75% 35%, 75% 75%, 25% 75%)";
 const CLIP_EXPAND_TO = "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)";
+
+// Мобильная версия: полная ширина, раскрытие только вниз от верха (без боковых отступов)
+const CLIP_EXPAND_FROM_MOBILE = "inset(0% 0% 70% 0%)";
+const CLIP_EXPAND_TO_MOBILE = "inset(0% 0% 0% 0%)";
+
+function getClipExpandFrom() {
+  return mobileMq.matches ? CLIP_EXPAND_FROM_MOBILE : CLIP_EXPAND_FROM;
+}
+
+function getClipExpandTo() {
+  return mobileMq.matches ? CLIP_EXPAND_TO_MOBILE : CLIP_EXPAND_TO;
+}
+
+function getExpandScrollEnd() {
+  return mobileMq.matches ? "+=38%" : "+=55%";
+}
 
 const PARALLAX = {
   mainY: 16,
@@ -44,7 +62,7 @@ export function initAdvantagesParallax() {
 
   requestAnimationFrame(() => {
     if (prefersReducedMotion) {
-      gsap.set(media, { clipPath: CLIP_EXPAND_TO });
+      gsap.set(media, { clipPath: getClipExpandTo() });
       if (shade) gsap.set(shade, { opacity: 1 });
       content?.classList.add("is-stage-visible");
       blocks.forEach((block) => block.classList.add("is-revealed"));
@@ -62,14 +80,14 @@ export function initAdvantagesParallax() {
       return;
     }
 
-    gsap.set(media, { clipPath: CLIP_EXPAND_FROM });
+    gsap.set(media, { clipPath: getClipExpandFrom() });
     if (shade) gsap.set(shade, { opacity: 0 });
 
     const expandTimeline = gsap.timeline();
 
     expandTimeline
       .to(media, {
-        clipPath: CLIP_EXPAND_TO,
+        clipPath: getClipExpandTo(),
         ease: "none",
         duration: 1,
       })
@@ -91,8 +109,8 @@ export function initAdvantagesParallax() {
       animation: expandTimeline,
       trigger: reveal,
       start: "top top",
-      end: "+=55%",
-      scrub: 0.35,
+      end: getExpandScrollEnd(),
+      scrub: mobileMq.matches ? 0.25 : 0.35,
       invalidateOnRefresh: true,
     });
 
